@@ -2,6 +2,7 @@
 <!-- Declaração de tipo de documento HTML5 -->
 <html lang="pt-BR">
 <!-- Define idioma como Português Brasileiro -->
+
 <head>
     <!-- Seção de metadados e configurações da página -->
     <meta charset="UTF-8">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Vinculação do arquivo CSS externo para estilos visuais -->
 </head>
+
 <body>
     <!-- Menu de navegação principal -->
     <div class="menu">
@@ -34,326 +36,599 @@
     </div>
 
     <!-- Container principal de conteúdo -->
-    <div class="container">
-        <!-- Títulos e textos introdutórios -->
-        <h1>CATÁLOGO SOFTCAR</h1>
-        <!-- Título principal da página em estilo luxuoso -->
-        <p align="center" style="font-size: 1.1rem; color: #bbbbbb; margin-bottom: 10px;">
-            <!-- Subtítulo com descrição da empresa -->
-            A maior coleção de veículos de luxo e superdesportivos do Brasil
-        </p>
-        <p align="center" class="consult-text">Consulte nossos especialistas para mais informações</p>
-        <!-- Call-to-action para consultar especialistas -->
+    <div class="container">: Wrapper com máxima largura, centralizado
 
-        <br><hr><br>
-        <!-- Separador visual entre seções -->
+        Contém 5 categorias de veículos com múltiplos car-cards em grid
 
-        <!-- SEÇÃO 1: SUPERCARS -->
-        <div class="category-section">
-            <!-- Seção de categoria de veículos "Supercars" -->
-            <h2 class="category-title">Supercars</h2>
-            <!-- Título da categoria -->
-            <div class="cars-grid">
-                <!-- Grid de exibição de carros (3 colunas) -->
-                
-                <!-- CARD 1: Ferrari F8 Tributo -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/assets/uploads/2019/03/FERRARI%20F8%20TRIBUTO%202020%20002.jpg" alt="Ferrari F8 Tributo">
-                    <!-- Imagem do veículo com alt-text para acessibilidade -->
-                    <h3>Ferrari F8 Tributo</h3>
-                    <!-- Nome do modelo -->
-                    <p>Potência e elegância italiana em um único automóvel</p>
-                    <!-- Descrição breve -->
-                    <a href="ferrari-f8.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada do veículo -->
+        -->
+
+        <div class="container">
+
+            <!-- Título principal da página -->
+
+            <h1>CATÁLOGO SOFTCAR</h1>
+
+            <!-- Subtítulo/descrição -->
+
+            <p align="center" style="font-size: 1.1rem; color: #bbbbbb; margin-bottom: 10px;">
+
+                A maior coleção de veículos de luxo e superdesportivos do Brasil
+
+            </p>
+
+            <!-- Call-to-action para contato -->
+
+            <p align="center" class="consult-text">Consulte nossos especialistas para mais informações</p>
+
+
+
+            <br>
+            <hr><br>
+
+
+
+            <!--
+
+CATEGORIA 1: SUPERCARS
+
+Veículos esportivos de ultra performance
+
+Cards: Ferrari F8 Tributo, Ferrari Monza SP2, McLaren 720S
+
+-->
+
+            <div class="category-section">
+
+                <h2 class="category-title">Supercars</h2>
+
+                <div class="cars-grid">
+
+                    <!-- Ferrari F8 Tributo -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2019/03/FERRARI%20F8%20TRIBUTO%202020%20002.jpg"
+                            alt="Ferrari F8 Tributo">
+
+                        <h3>Ferrari F8 Tributo</h3>
+
+                        <p>Potência e elegância italiana em um único automóvel</p>
+
+                        <a href="ferrari-f8.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Ferrari Monza SP2 -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/img/carros/2026/03/ferrari-monza-sp2-rosso-corsa-2021-001-20260301192412-1600x900.jpg"
+                            alt="Ferrari Monza SP2">
+
+                        <h3>Ferrari Monza SP2</h3>
+
+                        <p>Ícone de velocidade e adrenalina pura</p>
+
+                        <a href="ferrari-monza-sp2.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- McLaren 720S -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2017/03/MCLAREN%20720S%202018%20001.jpg"
+                            alt="McLaren 720S">
+
+                        <h3>McLaren 720S</h3>
+
+                        <p>Engenharia britânica de topo mundial</p>
+
+                        <a href="mclaren-720s.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
                 </div>
 
-                <!-- CARD 2: Ferrari Monza SP2 -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/img/carros/2026/03/ferrari-monza-sp2-rosso-corsa-2021-001-20260301192412-1600x900.jpg" alt="Ferrari Monza SP2">
-                    <!-- Imagem do veículo -->
-                    <h3>Ferrari Monza SP2</h3>
-                    <!-- Nome do modelo -->
-                    <p>Ícone de velocidade e adrenalina pura</p>
-                    <!-- Descrição breve -->
-                    <a href="ferrari-monza-sp2.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
+            </div>
+
+
+
+            <br>
+            <hr><br>
+
+
+
+            <!-- CATEGORIA 2: HYPERCARS -->
+
+            <div class="category-section">
+
+                <h2 class="category-title">Hipercars</h2>
+
+                <div class="cars-grid">
+
+                    <!-- Bugatti Chiron -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2016/02/BUGATTI%20CHIRON%202017%200005.jpg"
+                            alt="Bugatti Chiron">
+
+                        <h3>Bugatti Chiron</h3>
+
+                        <p>Potência extrema com 1.500 cavalos</p>
+
+                        <a href="bugatti-chiron.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Bugatti La Voiture Noire -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2019/03/BUGATTI%20LA%20VOITURE%20NOIRE%202019%20007.jpg"
+                            alt="Bugatti La Voiture Noire">
+
+                        <h3>Bugatti La Voiture Noire</h3>
+
+                        <p>A joia preta mais valiosa do mundo</p>
+
+                        <a href="bugatti-la-voiture-noire.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Koenigsegg Jesko -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2019/04/KOENIGSEGG%20JESKO%202020%20010.jpg"
+                            alt="Koenigsegg Jesko">
+
+                        <h3>Koenigsegg Jesko</h3>
+
+                        <p>Superior tecnológico sueco de absoluta performance</p>
+
+                        <a href="koenigsegg-jesko.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
                 </div>
 
-                <!-- CARD 3: McLaren 720S -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/assets/uploads/2017/03/MCLAREN%20720S%202018%20001.jpg" alt="McLaren 720S">
-                    <!-- Imagem do veículo -->
-                    <h3>McLaren 720S</h3>
-                    <!-- Nome do modelo -->
-                    <p>Engenharia britânica de topo mundial</p>
-                    <!-- Descrição breve -->
-                    <a href="mclaren-720s.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
+            </div>
+
+
+
+            <br>
+            <hr><br>
+
+
+
+            <!-- CATEGORIA 3: LUXURY CARS -->
+
+            <div class="category-section">
+
+                <h2 class="category-title">Carros de Luxo</h2>
+
+                <div class="cars-grid">
+
+                    <!-- Ferrari Roma Spider -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2019/11/FERRARI%20ROMA%202020%200002.jpg"
+                            alt="Ferrari Roma Spider">
+
+                        <h3>Ferrari Roma Spider</h3>
+
+                        <p>Conversível italiano de elegância absoluta</p>
+
+                        <a href="ferrari-roma-spider.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Mercedes-Maybach -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/img/carros/2026/03/mercedes-maybach-s-class-2027-001-20260324144736-1280x925.jpg"
+                            alt="Mercedes-Maybach">
+
+                        <h3>Mercedes-Maybach</h3>
+
+                        <p>O auge do luxo e conforto alemão</p>
+
+                        <a href="mercedes-maybach.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Rolls Royce Phantom -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/img/carros/2026/02/rolls-royce-phantom-arabesque-2026-001-20260213204633-1280x925.jpg"
+                            alt="Rolls Royce Phantom">
+
+                        <h3>Rolls Royce Phantom</h3>
+
+                        <p>A definição de luxo e prestígio britânico</p>
+
+                        <a href="rolls-royce-phantom.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <br>
+            <hr><br>
+
+
+
+            <!-- CATEGORIA 4: LUXURY SUVs -->
+
+            <div class="category-section">
+
+                <h2 class="category-title">SUVs de Luxo</h2>
+
+                <div class="cars-grid">
+
+                    <!-- Lamborghini Urus -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2017/12/LAMBORGHINI%20URUS%202019%2000002.jpg"
+                            alt="Lamborghini Urus">
+
+                        <h3>Lamborghini Urus</h3>
+
+                        <p>O primeiro Super SUV do Touro</p>
+
+                        <a href="lamborghini-urus.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Rolls Royce Cullinan -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2018/05/ROLLS%20ROYCE%20CULLINAN%202019%2001.jpg"
+                            alt="Rolls Royce Cullinan">
+
+                        <h3>Rolls Royce Cullinan</h3>
+
+                        <p>Elegância britânica em formato SUV</p>
+
+                        <a href="rolls-royce-cullinan.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Bentley Bentayga -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2015/09/BENTLEY%20BENTAYGA%202016%20006.jpg"
+                            alt="Bentley Bentayga">
+
+                        <h3>Bentley Bentayga</h3>
+
+                        <p>Sofisticação e performance em SUV</p>
+
+                        <a href="bentley-bentayga.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <br>
+            <hr><br>
+
+
+
+            <!-- CATEGORIA 5: GRAND TOURERS (GT) -->
+
+            <div class="category-section">
+
+                <h2 class="category-title">Grand Tourers (GT)</h2>
+
+                <div class="cars-grid">
+
+                    <!-- Lamborghini Huracán -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/img/carros/2024/05/lamborghini-huracn-evo-white-2021-004-20240517204931-1600x1067.jpg"
+                            alt="Lamborghini Huracán">
+
+                        <h3>Lamborghini Huracán</h3>
+
+                        <p>Desempenho italiano de pura adrenalina</p>
+
+                        <a href="lamborghini-huracan.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Lamborghini Sián -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2019/09/LAMBORGHINI%20SIAN%202020%2001.jpg"
+                            alt="Lamborghini Sián">
+                        <h3>Lamborghini Sián</h3>
+                        <p>Futuro híbrido em supercarro italiano</p>
+                        <a href="lamborghini-sian.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Pagani Huayra -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/img/carros/galeria/2024/01/pagani-huayra-2011-01-20240124113758-1024x740.jpg"
+                            alt="Pagani Huayra">
+
+                        <h3>Pagani Huayra</h3>
+
+                        <p>Obra de arte aerodinâmica argentino-francesa</p>
+
+                        <a href="pagani-huayra.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <br>
+            <hr><br>
+
+
+
+            <!-- BÔNUS: CLÁSSICOS E ESPECIAIS -->
+
+            <div class="category-section">
+
+                <h2 class="category-title">Clássicos e Especiais</h2>
+
+                <div class="cars-grid">
+
+                    <!-- BMW M6 GT3 -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/2015/09/BMW%20M6%20SERIES%20GT3%202016%2001.jpg"
+                            alt="BMW M6 GT3">
+
+                        <h3>BMW M6 GT3</h3>
+
+                        <p>Engenharia alemã de competição legitimada</p>
+
+                        <a href="bmw-m6-gt3.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Bentley Flying Spur -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/assets/uploads/images/VEICULOS/B/BENTLEY/2014_BENTLEY_FLYING_SPUR//BENTLEY_FLYING_SPUR_2014_001.jpg"
+                            alt="Bentley Flying Spur">
+
+                        <h3>Bentley Flying Spur</h3>
+
+                        <p>Elegância britânica em velocidade</p>
+
+                        <a href="bentley-flying.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+
+
+                    <!-- Porsche 911 -->
+
+                    <div class="car-card">
+
+                        <img src="https://www.planetcarsz.com/img/carros/2025/12/porsche-911-carrera-t-formosa-2025-001-20251204185323-1600x901.jpg"
+                            alt="Porsche 911">
+
+                        <h3>Porsche 911</h3>
+
+                        <p>O desportivo mais icônico da história</p>
+
+                        <a href="porsche-911.html" class="btn-details">Ver Detalhes</a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <br>
+            <hr><br>
+            <!-- Separador visual entre seções -->
+
+            <!-- SEÇÃO 4: PATROCINIOS OFICIAIS -->
+            <div class="sponsors-section">
+                <!-- Seção de parceiros e patrocinadores oficiais da SOFTCAR -->
+                <h2 class="category-title">Patrocinios Oficiais</h2>
+                <!-- Título da seção -->
+                <div class="sponsors-grid">
+                    <!-- Grid de logos de patrocinadores (4 colunas) -->
+
+                    <!-- LOGO 1: Shell -->
+                    <div class="sponsor-item">
+                        <!-- Container para logo individual -->
+                        <img src="/imagens/logo_shell.png" alt="Shell">
+                        <!-- Logo e alt-text -->
+                    </div>
+
+                    <!-- LOGO 2: Pirelli -->
+                    <div class="sponsor-item">
+                        <!-- Container para logo individual -->
+                        <img src="/imagens/logo_pirelli.png" alt="Pirelli">
+                        <!-- Logo e alt-text -->
+                    </div>
+
+                    <!-- LOGO 3: Red Bull -->
+                    <div class="sponsor-item">
+                        <!-- Container para logo individual -->
+                        <img src="/imagens/logo_redbull.png" alt="Red Bull">
+                        <!-- Logo e alt-text -->
+                    </div>
+
+                    <!-- LOGO 4: Mobil -->
+                    <div class="sponsor-item">
+                        <!-- Container para logo individual -->
+                        <img src="/imagens/logo_mobil.png" alt="Mobil">
+                        <!-- Logo e alt-text -->
+                    </div>
                 </div>
             </div>
+
         </div>
 
-        <br><hr><br>
-        <!-- Separador visual entre seções -->
-
-        <!-- SEÇÃO 2: HIPERCARS -->
-        <div class="category-section">
-            <!-- Seção de categoria de veículos "Hipercars" (veículos ultra premium) -->
-            <h2 class="category-title">Hipercars</h2>
-            <!-- Título da categoria -->
-            <div class="cars-grid">
-                <!-- Grid de exibição de carros (3 colunas) -->
-                
-                <!-- CARD 1: Bugatti Chiron -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/assets/uploads/2016/02/BUGATTI%20CHIRON%202017%200005.jpg" alt="Bugatti Chiron">
-                    <!-- Imagem do veículo -->
-                    <h3>Bugatti Chiron</h3>
-                    <!-- Nome do modelo -->
-                    <p>Potência extrema com 1.500 cavalos</p>
-                    <!-- Descrição breve com especificação -->
-                    <a href="bugatti-chiron.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
-                </div>
-
-                <!-- CARD 2: Bugatti La Voiture Noire -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/assets/uploads/2019/03/BUGATTI%20LA%20VOITURE%20NOIRE%202019%20007.jpg" alt="Bugatti La Voiture Noire">
-                    <!-- Imagem do veículo -->
-                    <h3>Bugatti La Voiture Noire</h3>
-                    <!-- Nome do modelo (significa "O Carro Preto" em francês) -->
-                    <p>A joia preta mais valiosa do mundo</p>
-                    <!-- Descrição breve -->
-                    <a href="bugatti-la-voiture-noire.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
-                </div>
-
-                <!-- CARD 3: Koenigsegg Jesko -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/assets/uploads/2019/04/KOENIGSEGG%20JESKO%202020%20010.jpg" alt="Koenigsegg Jesko">
-                    <!-- Imagem do veículo -->
-                    <h3>Koenigsegg Jesko</h3>
-                    <!-- Nome do modelo -->
-                    <p>Superior tecnológico sueco de absoluta performance</p>
-                    <!-- Descrição breve -->
-                    <a href="koenigsegg-jesko.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
-                </div>
-            </div>
-        </div>
-
-        <br><hr><br>
-        <!-- Separador visual entre seções -->
-
-        <!-- SEÇÃO 3: CARROS DE LUXO -->
-        <div class="category-section">
-            <!-- Seção de categoria de veículos "Carros de Luxo" (veículos premium de conforto) -->
-            <h2 class="category-title">Carros de Luxo</h2>
-            <!-- Título da categoria -->
-            <div class="cars-grid">
-                <!-- Grid de exibição de carros (3 colunas) -->
-                
-                <!-- CARD 1: Ferrari Roma Spider -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/assets/uploads/2019/11/FERRARI%20ROMA%202020%200002.jpg" alt="Ferrari Roma Spider">
-                    <!-- Imagem do veículo -->
-                    <h3>Ferrari Roma Spider</h3>
-                    <!-- Nome do modelo -->
-                    <p>Conversível italiano de elegância absoluta</p>
-                    <!-- Descrição breve -->
-                    <a href="ferrari-roma-spider.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
-                </div>
-
-                <!-- CARD 2: Mercedes-Maybach -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/img/carros/2026/03/mercedes-maybach-s-class-2027-001-20260324144736-1280x925.jpg" alt="Mercedes-Maybach">
-                    <!-- Imagem do veículo -->
-                    <h3>Mercedes-Maybach</h3>
-                    <!-- Nome do modelo -->
-                    <p>O auge do luxo e conforto alemão</p>
-                    <!-- Descrição breve -->
-                    <a href="mercedes-maybach.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
-                </div>
-
-                <!-- CARD 3: Rolls Royce Phantom -->
-                <div class="car-card">
-                    <!-- Card individual do veículo -->
-                    <img src="https://www.planetcarsz.com/img/carros/2026/02/rolls-royce-phantom-arabesque-2026-001-20260213204633-1280x925.jpg" alt="Rolls Royce Phantom">
-                    <!-- Imagem do veículo -->
-                    <h3>Rolls Royce Phantom</h3>
-                    <!-- Nome do modelo -->
-                    <p>A definição de luxo e prestígio britânico</p>
-                    <!-- Descrição breve -->
-                    <a href="rolls-royce-phantom.html" class="btn-details">Ver Detalhes</a>
-                    <!-- Link para página detalhada -->
-                </div>
-            </div>
-        </div>
-
-        <br><hr><br>
-        <!-- Separador visual entre seções -->
-
-        <!-- SEÇÃO 4: PATROCINIOS OFICIAIS -->
-        <div class="sponsors-section">
-            <!-- Seção de parceiros e patrocinadores oficiais da SOFTCAR -->
-            <h2 class="category-title">Patrocinios Oficiais</h2>
+        <!-- SEÇÃO 5: CONSULTORIA EXCLUSIVA (FORMULÁRIO DE CONTATO) -->
+        <div class="contact-section">
+            <!-- Seção de contato e consultoria com formulário -->
+            <h2 class="category-title">Consultoria Exclusiva</h2>
             <!-- Título da seção -->
-            <div class="sponsors-grid">
-                <!-- Grid de logos de patrocinadores (4 colunas) -->
-                
-                <!-- LOGO 1: Shell -->
-                <div class="sponsor-item">
-                    <!-- Container para logo individual -->
-                    <img src="/imagens/logo_shell.png" alt="Shell">
-                    <!-- Logo e alt-text -->
-                </div>
-                
-                <!-- LOGO 2: Pirelli -->
-                <div class="sponsor-item">
-                    <!-- Container para logo individual -->
-                    <img src="/imagens/logo_pirelli.png" alt="Pirelli">
-                    <!-- Logo e alt-text -->
-                </div>
-                
-                <!-- LOGO 3: Red Bull -->
-                <div class="sponsor-item">
-                    <!-- Container para logo individual -->
-                    <img src="/imagens/logo_redbull.png" alt="Red Bull">
-                    <!-- Logo e alt-text -->
-                </div>
-                
-                <!-- LOGO 4: Mobil -->
-                <div class="sponsor-item">
-                    <!-- Container para logo individual -->
-                    <img src="/imagens/logo_mobil.png" alt="Mobil">
-                    <!-- Logo e alt-text -->
-                </div>
+            <p align="center" style="color: #999; margin-bottom: 30px;">
+                <!-- Descrição da seção -->
+                Solicite uma reserva ou agende uma visita privativa ao nosso showroom.
+            </p>
+
+            <!-- Formulário de contato VIP -->
+            <div class="form-container">
+                <!-- Container do formulário -->
+                <form action="#" method="post">
+                    <!-- Formulário HTML com método POST (não funcional - apenas demonstrativo) -->
+
+                    <!-- CAMPO 1: Nome Completo -->
+                    <div class="form-group">
+                        <!-- Grupo de campo do formulário -->
+                        <label for="nome">Nome Completo</label>
+                        <!-- Rótulo associado ao campo de entrada -->
+                        <input type="text" id="nome" name="nome" placeholder="Ex: Mel Isis Costa Silva" required>
+                        <!-- Campo de texto obrigatório com placeholder de exemplo -->
+                    </div>
+
+                    <!-- CAMPO 2: E-mail Corporativo -->
+                    <div class="form-group">
+                        <!-- Grupo de campo do formulário -->
+                        <label for="email">E-mail Corporativo</label>
+                        <!-- Rótulo associado ao campo de e-mail -->
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        <!-- Campo de e-mail obrigatório com validação nativa HTML5 -->
+                    </div>
+
+                    <!-- CAMPO 3: Veículo de Interesse -->
+                    <div class="form-group">
+                        <!-- Grupo de campo do formulário -->
+                        <label for="veiculo">Veículo de Interesse</label>
+                        <!-- Rótulo associado ao campo de seleção -->
+                        <select id="veiculo" name="veiculo">
+                            <!-- Menu suspenso (dropdown) de seleção de veículos -->
+                            <option value="">Selecione um modelo...</option>
+                            <!-- Opção padrão vazia -->
+                            <option value="ferrari-f8">Ferrari F8 Tributo</option>
+                            <!-- Opção 1: Ferrari F8 -->
+                            <option value="lamborghini-sian">Lamborghini Sián</option>
+                            <!-- Opção 2: Lamborghini Sián -->
+                            <option value="bugatti-chiron">Bugatti Chiron</option>
+                            <!-- Opção 3: Bugatti Chiron -->
+                            <option value="mclaren-720s">McLaren 720S</option>
+                            <!-- Opção 4: McLaren 720S -->
+                            <option value="outros">Outros / Coleção Particular</option>
+                            <!-- Opção 5: Outros modelos não listados -->
+                        </select>
+                    </div>
+
+                    <!-- CAMPO 4: Mensagem/Observações -->
+                    <div class="form-group">
+                        <!-- Grupo de campo do formulário -->
+                        <label for="mensagem">Mensagem / Observações</label>
+                        <!-- Rótulo associado ao campo de texto longo -->
+                        <textarea id="mensagem" name="mensagem" rows="5"
+                            placeholder="Descreva suas preferências de personalização..."></textarea>
+                        <!-- Área de texto com 5 linhas visíveis para mensagem livre -->
+                    </div>
+
+                    <!-- BOTÃO DE ENVIO -->
+                    <button type="submit" class="btn-submit">Solicitar Contato VIP</button>
+                    <!-- Botão para enviar o formulário com texto "Solicitar Contato VIP" -->
+                </form>
             </div>
         </div>
 
-    </div>
-    
-    <!-- SEÇÃO 5: CONSULTORIA EXCLUSIVA (FORMULÁRIO DE CONTATO) -->
-    <div class="contact-section">
-        <!-- Seção de contato e consultoria com formulário -->
-        <h2 class="category-title">Consultoria Exclusiva</h2>
-        <!-- Título da seção -->
-        <p align="center" style="color: #999; margin-bottom: 30px;">
-            <!-- Descrição da seção -->
-            Solicite uma reserva ou agende uma visita privativa ao nosso showroom.
-        </p>
+        <!-- RODAPÉ (FOOTER) -->
+        <div class="footer">
+            <!-- Seção de rodapé com informações corporativas -->
 
-        <!-- Formulário de contato VIP -->
-        <div class="form-container">
-            <!-- Container do formulário -->
-            <form action="#" method="post">
-                <!-- Formulário HTML com método POST (não funcional - apenas demonstrativo) -->
-                
-                <!-- CAMPO 1: Nome Completo -->
-                <div class="form-group">
-                    <!-- Grupo de campo do formulário -->
-                    <label for="nome">Nome Completo</label>
-                    <!-- Rótulo associado ao campo de entrada -->
-                    <input type="text" id="nome" name="nome" placeholder="Ex: Mel Isis Costa Silva" required>
-                    <!-- Campo de texto obrigatório com placeholder de exemplo -->
+            <!-- SEÇÃO 1 DO FOOTER: Informação da Disciplina -->
+            <div class="footer-section">
+                <!-- Primeira coluna/seção do rodapé -->
+                <p class="footer-title">Engenharia de Software - Desenvolvimento Web</p>
+                <!-- Título indicando a disciplina acadêmica -->
+            </div>
+
+            <!-- SEÇÃO 2 DO FOOTER: Integrantes do Projeto -->
+            <div class="footer-section">
+                <!-- Segunda coluna/seção do rodapé -->
+                <p><b>Integrantes do Projeto:</b></p>
+                <!-- Cabeçalho dos integrantes em negrito -->
+                <div class="footer-names">
+                    <!-- Container dos nomes e RAs dos integrantes -->
+                    <p>Mel Isis Costa Silva – 22508420</p>
+                    <!-- Integrante 1 com RA (Registro Acadêmico) -->
+                    <p>Gabriela Yasmin da Conceição Viana – 22505273</p>
+                    <!-- Integrante 2 com RA -->
+                    <p>Guilherme Neves Lourenço – 22509395</p>
+                    <!-- Integrante 3 com RA -->
+                    <p>Vitor dos Santos Wamburg – 22510570</p>
+                    <!-- Integrante 4 com RA -->
                 </div>
+            </div>
 
-                <!-- CAMPO 2: E-mail Corporativo -->
-                <div class="form-group">
-                    <!-- Grupo de campo do formulário -->
-                    <label for="email">E-mail Corporativo</label>
-                    <!-- Rótulo associado ao campo de e-mail -->
-                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-                    <!-- Campo de e-mail obrigatório com validação nativa HTML5 -->
-                </div>
-
-                <!-- CAMPO 3: Veículo de Interesse -->
-                <div class="form-group">
-                    <!-- Grupo de campo do formulário -->
-                    <label for="veiculo">Veículo de Interesse</label>
-                    <!-- Rótulo associado ao campo de seleção -->
-                    <select id="veiculo" name="veiculo">
-                        <!-- Menu suspenso (dropdown) de seleção de veículos -->
-                        <option value="">Selecione um modelo...</option>
-                        <!-- Opção padrão vazia -->
-                        <option value="ferrari-f8">Ferrari F8 Tributo</option>
-                        <!-- Opção 1: Ferrari F8 -->
-                        <option value="lamborghini-sian">Lamborghini Sián</option>
-                        <!-- Opção 2: Lamborghini Sián -->
-                        <option value="bugatti-chiron">Bugatti Chiron</option>
-                        <!-- Opção 3: Bugatti Chiron -->
-                        <option value="mclaren-720s">McLaren 720S</option>
-                        <!-- Opção 4: McLaren 720S -->
-                        <option value="outros">Outros / Coleção Particular</option>
-                        <!-- Opção 5: Outros modelos não listados -->
-                    </select>
-                </div>
-
-                <!-- CAMPO 4: Mensagem/Observações -->
-                <div class="form-group">
-                    <!-- Grupo de campo do formulário -->
-                    <label for="mensagem">Mensagem / Observações</label>
-                    <!-- Rótulo associado ao campo de texto longo -->
-                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Descreva suas preferências de personalização..."></textarea>
-                    <!-- Área de texto com 5 linhas visíveis para mensagem livre -->
-                </div>
-
-                <!-- BOTÃO DE ENVIO -->
-                <button type="submit" class="btn-submit">Solicitar Contato VIP</button>
-                <!-- Botão para enviar o formulário com texto "Solicitar Contato VIP" -->
-            </form>
-        </div>
-    </div>
-
-    <!-- RODAPÉ (FOOTER) -->
-    <div class="footer">
-        <!-- Seção de rodapé com informações corporativas -->
-        
-        <!-- SEÇÃO 1 DO FOOTER: Informação da Disciplina -->
-        <div class="footer-section">
-            <!-- Primeira coluna/seção do rodapé -->
-            <p class="footer-title">Engenharia de Software - Desenvolvimento Web</p>
-            <!-- Título indicando a disciplina acadêmica -->
-        </div>
-
-        <!-- SEÇÃO 2 DO FOOTER: Integrantes do Projeto -->
-        <div class="footer-section">
-            <!-- Segunda coluna/seção do rodapé -->
-            <p><b>Integrantes do Projeto:</b></p>
-            <!-- Cabeçalho dos integrantes em negrito -->
-            <div class="footer-names">
-                <!-- Container dos nomes e RAs dos integrantes -->
-                <p>Mel Isis Costa Silva – 22508420</p>
-                <!-- Integrante 1 com RA (Registro Acadêmico) -->
-                <p>Gabriela Yasmin da Conceição Viana – 22505273</p>
-                <!-- Integrante 2 com RA -->
-                <p>Guilherme Neves Lourenço – 22509395</p>
-                <!-- Integrante 3 com RA -->
-                <p>Vitor dos Santos Wamburg – 22510570</p>
-                <!-- Integrante 4 com RA -->
+            <!-- SEÇÃO 3 DO FOOTER: Copyright -->
+            <div class="footer-section">
+                <!-- Terceira coluna/seção do rodapé -->
+                <p>&copy; 2026 SoftCar. Todos os direitos reservados.</p>
+                <!-- Aviso de copyright e direitos autorais -->
             </div>
         </div>
-
-        <!-- SEÇÃO 3 DO FOOTER: Copyright -->
-        <div class="footer-section">
-            <!-- Terceira coluna/seção do rodapé -->
-            <p>&copy; 2026 SoftCar. Todos os direitos reservados.</p>
-            <!-- Aviso de copyright e direitos autorais -->
-        </div>
-    </div>
-    <!-- Fim do rodapé -->
+        <!-- Fim do rodapé -->
 </body>
 <!-- Fim da estrutura HTML -->
+
 </html>
 <!-- Fim do documento HTML -->
