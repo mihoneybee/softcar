@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
 /* Reset e Base */
 * {
@@ -231,4 +231,81 @@ iframe:hover {
 /* Utilitário para Textos centralizados */
 .text-center {
     text-align: center;
+}
+/* Iframe globais (Headers and Footers) */
+iframe.global-header {
+    width: 100%;
+    height: 70px;
+    display: block;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+iframe.global-footer {
+    width: 100%;
+    height: 80px;
+    display: block;
+    border: none;
+    margin-top: 40px;
+}
+
+/* Modificadores de BotÃµes Detalhes (Estilo TCar/Gatti) */
+a.btn-detalhes {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px 0;
+    text-align: center;
+    border: 1px solid #444;
+    color: #e0e0e0 !important;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+a.btn-detalhes:hover {
+    border-color: #e10600;
+    background-color: rgba(225, 6, 0, 0.05);
+    color: #fff !important;
+    text-decoration: none !important;
+}
+
+/* Home Catalog Structure */
+table.catalog-table {
+    width: 100%;
+    border-spacing: 20px;
+    margin-bottom: 20px;
+}
+
+table.catalog-table td {
+    text-align: left;
+    width: 33.333%;
+}
+
+table.catalog-table img {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+table.catalog-table h3 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+table.catalog-table p {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+h3.category-heading {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
