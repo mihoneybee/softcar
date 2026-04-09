@@ -1,271 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOFTCAR | Catálogo de Veículos de Luxo</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* ====================================================================
-           ESTILOS LOCAIS - Específico desta página (index.html)
-           ==================================================================== */
-
-        /**
-         * .category-section - Container de cada categoria de veículos
-         * Agrupa título + grid de cars em uma seção visual
-         * Margem vertical de 60px para separação entre categorias
-         */
-        .category-section {
-            margin: 60px 0;
-        }
-
-        /**
-         * .category-title - Títulos das categorias
-         * Exemplos: SUPERCARS, HIPERCARS, CARROS DE LUXO, SUVs DE LUXO, GRAND TOURERS
-         * Estilo: UPPERCASE, barra vermelha Ferrari embaixo, letter-spacing para luxo
-         * Font-size: 2rem = 32px (títulos grandes)
-         * Font-weight: 700 = Negrito (Bold)
-         */
-        .category-title {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            text-transform: uppercase;               /* Converte texto para MAIÚSCULAS */
-            letter-spacing: 3px;                    /* Espaço entre letras para elegância */
-            margin-bottom: 40px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #e10600;       /* Barra vermelha Ferrari como indicador */
-        }
-
-        /**
-         * .cars-grid - Container CSS Grid para layout em colunas
-         * Padrão Desktop: 3 colunas iguais
-         * Responsivo: 3 → 2 → 1 conforme tela diminui (veja media queries abaixo)
-         * gap: 30px = Espaço entre items (3 colunas = 2 gaps verticais + 1 gap horizontal)
-         */
-        .cars-grid {
-            display: grid;                         /* Ativa CSS Grid layout */
-            grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais (1fr = 1 parte do espaço) */
-            gap: 30px;                             /* 30px entre cada card */
-            margin-bottom: 50px;
-        }
-
-        /**
-         * .car-card - Card individual de um veículo
-         * O bloco visual que contém: imagem + título + descrição + botão
-         * Cada card ocupa 1 coluna no grid
-         * Background: Preto semi-transparente (rgba = Red Green Blue Alpha)
-         * Border: Vermelha muito sutil (30% opaca)
-         * Hover: Borda fica vermelha intensa, sombra vermelha, move para cima
-         */
-        .car-card {
-            background: rgba(20, 20, 20, 0.8);     /* Preto com 80% opacidade */
-            border: 1px solid rgba(225, 6, 0, 0.3); /* Borda Ferrari Red 30% opaca */
-            padding: 20px;                          /* Espaço interno do card */
-            border-radius: 8px;                     /* Cantos arredondados 8px */
-            transition: all 0.3s ease;              /* Animação suave em todas as propriedades */
-            text-align: center;                     /* Centra todo o conteúdo */
-        }
-
-        /**
-         * .car-card:hover - Estado do card ao passar o mouse
-         * Pseudo-classe :hover = quando cursor está sobre o elemento
-         * Ativa efeito de "elevação" e destaque com sombra vermelha
-         * Transform: translateY(-5px) = Move 5px para cima (sai da página)
-         */
-        .car-card:hover {
-            border-color: #e10600;                  /* Borda muda para Ferrari Red puro */
-            box-shadow: 0 0 20px rgba(225, 6, 0, 0.4); /* Sombra vermelha grande (glow) */
-            transform: translateY(-5px);            /* Move 5px para cima, criando efeito 3D */
-        }
-
-        /**
-         * .car-card img - Imagem dentro do card
-         * Elemento <img> dentro do <div class="car-card">
-         * object-fit: cover = Recorta a imagem mantendo proporção e preenchendo espaço
-         * Height: 250px fixo = Todos os cards têm mesma altura de imagem (consistência)
-         * Border: Vermelha para combinar com tema
-         */
-        .car-card img {
-            width: 100%;                           /* Ocupa 100% da largura do card */
-            height: 250px;                         /* Altura fixa para consistência */
-            object-fit: cover;                     /* Recorta mantendo proporções */
-            border: 2px solid rgba(225, 6, 0, 0.5); /* Borda Ferrari Red 50% opaca */
-            margin-bottom: 15px;                   /* Espaço abaixo, separando da descrição */
-            border-radius: 4px;                    /* Cantos levemente arredondados */
-        }
-
-        /**
-         * .car-card h3 - Título do carro (nome do modelo)
-         * Exemplo: "Ferrari F8 Tributo", "McLaren 720S"
-         * Font-size: 1.3rem = 20.8px (grande mas não tanto quanto h1)
-         * Color: Branco puro (#ffffff)
-         */
-        .car-card h3 {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 10px;                   /* Espaço abaixo antes do próximo elemento */
-        }
-
-        /**
-         * .car-card p - Descrição/tagline do carro
-         * Textos de 1-2 linhas descrevendo o veículo
-         * Exemplo: "Potência e elegância italiana em um único automóvel"
-         * min-height: 40px = Garante altura mínima mesmo com textos muito curtos
-         * Isso evita que cards com textos longas fiquem desalinhados
-         */
-        .car-card p {
-            font-size: 0.9rem;
-            color: #bbbbbb;                        /* Cinza claro para contraste com fundo */
-            margin-bottom: 15px;
-            min-height: 40px;                      /* Altura mínima para alinhamento do botão */
-        }
-
-        /**
-         * .btn-details - Botão "Ver Detalhes"
-         * Leva para página de detalhe específica do carro
-         * Estilo: INVERTED BUTTON (muda radicalmente no hover)
-         * Padrão:
-         *   - Background: Transparente (só vê a borda)
-         *   - Text: Vermelho Ferrari (#e10600)
-         *   - Border: 2px vermelho Ferrari
-         * Hover:
-         *   - Background: Muda para Ferrari Red
-         *   - Text: Muda para Branco (#ffffff)
-         * Pseudo-classe :hover = quando o cursor está sobre o botão
-         */
-        .btn-details {
-            display: block;                        /* Elemento em bloco (não inline) */
-            width: 100%;                           /* Ocupa 100% da largura do card */
-            padding: 12px;                         /* Espaço interno do botão */
-            background-color: transparent;        /* Sem fundo inicialmente */
-            color: #e10600;                        /* Texto em vermelho Ferrari */
-            text-decoration: none;                 /* Remove underline de links */
-            font-weight: 700;                      /* Negrito para destaque */
-            text-transform: uppercase;             /* Converte para MAIÚSCULAS */
-            letter-spacing: 2px;                   /* Espaço entre letras */
-            border-radius: 4px;
-            transition: all 0.3s ease;             /* Suaviza mudanças no hover */
-            border: 2px solid #e10600;             /* Borda vermelha */
-            cursor: pointer;                       /* Cursor muda para "clicável" */
-        }
-
-        /**
-         * .btn-details:hover - Ativação do inverted effect
-         * Background: Muda de transparente para Ferrari Red (#e10600)
-         * Color: Texto fica branco (#ffffff)
-         * Box-shadow: Glow vermelha ao redor do botão
-         * Transform: Scale aumenta o botão em 5% para destaque visual
-         * Efeito visual: Botão "preenche" com cor vermelha e aumenta de tamanho
-         */
-        .btn-details:hover {
-            background-color: #e10600;             /* Fundo muda para Ferrari Red */
-            color: #ffffff;                        /* Texto muda para branco */
-            box-shadow: 0 0 15px rgba(225, 6, 0, 0.6), inset 0 0 5px rgba(0, 0, 0, 0.2); /* Glow externo + sombra interna */
-            transform: scale(1.05);                /* Aumenta 5% para efeito de elevação */
-        }
-
-        /* ====================================================================
-           MEDIA QUERIES - Responsividade em diferentes tamanhos de tela
-           ==================================================================== */
-
-        /**
-         * Breakpoint 1024px: Tablets em paisagem e monitores pequenos
-         * Reduz de 3 colunas para 2 colunas para melhor visualização
-         */
-        @media (max-width: 1024px) {
-            .cars-grid {
-                grid-template-columns: repeat(2, 1fr); /* Muda de 3 para 2 colunas */
-            }
-        }
-
-        /**
-         * Breakpoint 768px: Smartphones e tablets em retrato
-         * Stack vertical: Reduz para 1 coluna (ocupando 100% de largura)
-         * Cards ocupam a largura inteira da tela
-         */
-        @media (max-width: 768px) {
-            .cars-grid {
-                grid-template-columns: 1fr;         /* 1 coluna - stack vertical */
-            }
-        }
-
-        /**
-         * .consult-text - Texto pequeno de consulta/call-to-action
-         * Usado para dados de contato ou mensagens secundárias
-         * Font-size: 0.85rem (85% do tamanho padrão)
-         * Margin-top: Espaço após subtítulo
-         */
-        .consult-text {
-            font-size: 0.85rem;
-            color: #999999;                        /* Cinza escuro = informação secundária */
-            margin-top: 8px;
-        }
-
-        /**
-         * .footer - Rodapé da página
-         * Contém: Disciplina + Professores + Alunos + Copyright
-         * Integrado como HTML puro (não é iframe)
-         * Background: Preto muito escuro (#020202) = transição do branco para preto
-         * Border-top: Linha sutil de separação do conteúdo principal
-         */
-        .footer {
-            margin-top: 60px;
-            padding: 40px 20px;
-            text-align: center;
-            background-color: #020202;             /* Preto muito escuro */
-            color: #666666;
-            font-size: 0.85rem;
-            border-top: 1px solid #111;            /* Borda sutil de separação */
-        }
-
-        /**
-         * .footer p - Parágrafos no rodapé
-         * Espaçamento e cor específicos para legibilidade
-         */
-        .footer p {
-            margin: 8px 0;
-            color: #999999;                        /* Cinza claro para contraste com fundo escuro */
-        }
-
-        /**
-         * .footer .footer-section - Seções dentro do rodapé
-         * Agrupa informações relacionadas (disciplina, professores, alunos)
-         */
-        .footer .footer-section {
-            margin: 8px 0;
-        }
-
-        /**
-         * .footer .footer-title - Títulos das seções do rodapé
-         * Font-weight: 600 = Semi-negrito
-         * Color: #e10600 = Vermelho Ferrari para combinar com tema
-         */
-        .footer .footer-title {
-            font-weight: 600;
-            color: #e10600;                        /* Vermelho Ferrari */
-            margin-bottom: 5px;
-        }
-
-        /**
-         * .footer-names - Contêiner de nomes de integrantes
-         * Line-height: 1.6 = Espaço entre nomes para melhor legibilidade
-         */
-        .footer-names {
-            margin-top: 10px;
-            line-height: 1.6;                      /* Espaço entre linhas */
-        }
-    </style>
 </head>
 <body>
-    <!--
-    ==========================================================
-    NAVEGAÇÃO PRINCIPAL (Menu Sticky)
-    ==========================================================
-    Menu integrado na página (não usa iframe)
-    Fica fixo no topo com semi-transparência e glass effect
-    Links: HOME | EMPRESA | GALERIA | TEXTOS | DOCUMENTOS | TABELAS | LISTAS
-    -->
     <div class="menu">
         <a href="index.html">Home</a>
         <a href="briefing.html">Empresa</a>
@@ -276,34 +17,18 @@
         <a href="listas.html">Listas</a>
     </div>
 
-    <!--
-    ==========================================================
-    CONTAINER PRINCIPAL - Catálogo de Veículos
-    ==========================================================
-    <div class="container">: Wrapper com máxima largura, centralizado
-    Contém 5 categorias de veículos com múltiplos car-cards em grid
-    -->
     <div class="container">
-        <!-- Título principal da página -->
         <h1>CATÁLOGO SOFTCAR</h1>
-        <!-- Subtítulo/descrição -->
         <p align="center" style="font-size: 1.1rem; color: #bbbbbb; margin-bottom: 10px;">
             A maior coleção de veículos de luxo e superdesportivos do Brasil
         </p>
-        <!-- Call-to-action para contato -->
         <p align="center" class="consult-text">Consulte nossos especialistas para mais informações</p>
 
         <br><hr><br>
 
-        <!--
-        CATEGORIA 1: SUPERCARS
-        Veículos esportivos de ultra performance
-        Cards: Ferrari F8 Tributo, Ferrari Monza SP2, McLaren 720S
-        -->
         <div class="category-section">
             <h2 class="category-title">Supercars</h2>
             <div class="cars-grid">
-                <!-- Ferrari F8 Tributo -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/assets/uploads/2019/03/FERRARI%20F8%20TRIBUTO%202020%20002.jpg" alt="Ferrari F8 Tributo">
                     <h3>Ferrari F8 Tributo</h3>
@@ -311,7 +36,6 @@
                     <a href="ferrari-f8.html" class="btn-details">Ver Detalhes</a>
                 </div>
 
-                <!-- Ferrari Monza SP2 -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/img/carros/2026/03/ferrari-monza-sp2-rosso-corsa-2021-001-20260301192412-1600x900.jpg" alt="Ferrari Monza SP2">
                     <h3>Ferrari Monza SP2</h3>
@@ -319,7 +43,6 @@
                     <a href="ferrari-monza-sp2.html" class="btn-details">Ver Detalhes</a>
                 </div>
 
-                <!-- McLaren 720S -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/assets/uploads/2017/03/MCLAREN%20720S%202018%20001.jpg" alt="McLaren 720S">
                     <h3>McLaren 720S</h3>
@@ -331,11 +54,9 @@
 
         <br><hr><br>
 
-        <!-- CATEGORIA 2: HYPERCARS -->
         <div class="category-section">
             <h2 class="category-title">Hipercars</h2>
             <div class="cars-grid">
-                <!-- Bugatti Chiron -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/assets/uploads/2016/02/BUGATTI%20CHIRON%202017%200005.jpg" alt="Bugatti Chiron">
                     <h3>Bugatti Chiron</h3>
@@ -343,7 +64,6 @@
                     <a href="bugatti-chiron.html" class="btn-details">Ver Detalhes</a>
                 </div>
 
-                <!-- Bugatti La Voiture Noire -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/assets/uploads/2019/03/BUGATTI%20LA%20VOITURE%20NOIRE%202019%20007.jpg" alt="Bugatti La Voiture Noire">
                     <h3>Bugatti La Voiture Noire</h3>
@@ -351,7 +71,6 @@
                     <a href="bugatti-la-voiture-noire.html" class="btn-details">Ver Detalhes</a>
                 </div>
 
-                <!-- Koenigsegg Jesko -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/assets/uploads/2019/04/KOENIGSEGG%20JESKO%202020%20010.jpg" alt="Koenigsegg Jesko">
                     <h3>Koenigsegg Jesko</h3>
@@ -363,11 +82,9 @@
 
         <br><hr><br>
 
-        <!-- CATEGORIA 3: LUXURY CARS -->
         <div class="category-section">
             <h2 class="category-title">Carros de Luxo</h2>
             <div class="cars-grid">
-                <!-- Ferrari Roma Spider -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/assets/uploads/2019/11/FERRARI%20ROMA%202020%200002.jpg" alt="Ferrari Roma Spider">
                     <h3>Ferrari Roma Spider</h3>
@@ -375,7 +92,6 @@
                     <a href="ferrari-roma-spider.html" class="btn-details">Ver Detalhes</a>
                 </div>
 
-                <!-- Mercedes-Maybach -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/img/carros/2026/03/mercedes-maybach-s-class-2027-001-20260324144736-1280x925.jpg" alt="Mercedes-Maybach">
                     <h3>Mercedes-Maybach</h3>
@@ -383,7 +99,6 @@
                     <a href="mercedes-maybach.html" class="btn-details">Ver Detalhes</a>
                 </div>
 
-                <!-- Rolls Royce Phantom -->
                 <div class="car-card">
                     <img src="https://www.planetcarsz.com/img/carros/2026/02/rolls-royce-phantom-arabesque-2026-001-20260213204633-1280x925.jpg" alt="Rolls Royce Phantom">
                     <h3>Rolls Royce Phantom</h3>
@@ -392,106 +107,8 @@
                 </div>
             </div>
         </div>
-
-        <br><hr><br>
-
-        <!-- CATEGORIA 4: LUXURY SUVs -->
-        <div class="category-section">
-            <h2 class="category-title">SUVs de Luxo</h2>
-            <div class="cars-grid">
-                <!-- Lamborghini Urus -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2017/12/LAMBORGHINI%20URUS%202019%2000002.jpg" alt="Lamborghini Urus">
-                    <h3>Lamborghini Urus</h3>
-                    <p>O primeiro Super SUV do Touro</p>
-                    <a href="lamborghini-urus.html" class="btn-details">Ver Detalhes</a>
-                </div>
-
-                <!-- Rolls Royce Cullinan -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2018/05/ROLLS%20ROYCE%20CULLINAN%202019%2001.jpg" alt="Rolls Royce Cullinan">
-                    <h3>Rolls Royce Cullinan</h3>
-                    <p>Elegância britânica em formato SUV</p>
-                    <a href="rolls-royce-cullinan.html" class="btn-details">Ver Detalhes</a>
-                </div>
-
-                <!-- Bentley Bentayga -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2015/09/BENTLEY%20BENTAYGA%202016%20006.jpg" alt="Bentley Bentayga">
-                    <h3>Bentley Bentayga</h3>
-                    <p>Sofisticação e performance em SUV</p>
-                    <a href="bentley-bentayga.html" class="btn-details">Ver Detalhes</a>
-                </div>
-            </div>
-        </div>
-
-        <br><hr><br>
-
-        <!-- CATEGORIA 5: GRAND TOURERS (GT) -->
-        <div class="category-section">
-            <h2 class="category-title">Grand Tourers (GT)</h2>
-            <div class="cars-grid">
-                <!-- Lamborghini Huracán -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/img/carros/2024/05/lamborghini-huracn-evo-white-2021-004-20240517204931-1600x1067.jpg" alt="Lamborghini Huracán">
-                    <h3>Lamborghini Huracán</h3>
-                    <p>Desempenho italiano de pura adrenalina</p>
-                    <a href="lamborghini-huracan.html" class="btn-details">Ver Detalhes</a>
-                </div>
-
-                <!-- Lamborghini Sián -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2019/09/LAMBORGHINI%20SIAN%202020%2001.jpg" alt="Lamborghini Sián">
-                    <h3>Lamborghini Sián</h3>
-                    <p>Futuro híbrido em supercarro italiano</p>
-                    <a href="lamborghini-sian.html" class="btn-details">Ver Detalhes</a>
-                </div>
-
-                <!-- Pagani Huayra -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/img/carros/galeria/2024/01/pagani-huayra-2011-01-20240124113758-1024x740.jpg" alt="Pagani Huayra">
-                    <h3>Pagani Huayra</h3>
-                    <p>Obra de arte aerodinâmica argentino-francesa</p>
-                    <a href="pagani-huayra.html" class="btn-details">Ver Detalhes</a>
-                </div>
-            </div>
-        </div>
-
-        <br><hr><br>
-
-        <!-- BÔNUS: CLÁSSICOS E ESPECIAIS -->
-        <div class="category-section">
-            <h2 class="category-title">Clássicos e Especiais</h2>
-            <div class="cars-grid">
-                <!-- BMW M6 GT3 -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2015/09/BMW%20M6%20SERIES%20GT3%202016%2001.jpg" alt="BMW M6 GT3">
-                    <h3>BMW M6 GT3</h3>
-                    <p>Engenharia alemã de competição legitimada</p>
-                    <a href="bmw-m6-gt3.html" class="btn-details">Ver Detalhes</a>
-                </div>
-
-                <!-- Bentley Flying Spur -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/images/VEICULOS/B/BENTLEY/2014_BENTLEY_FLYING_SPUR//BENTLEY_FLYING_SPUR_2014_001.jpg" alt="Bentley Flying Spur">
-                    <h3>Bentley Flying Spur</h3>
-                    <p>Elegância britânica em velocidade</p>
-                    <a href="bentley-flying.html" class="btn-details">Ver Detalhes</a>
-                </div>
-
-                <!-- Porsche 911 -->
-                <div class="car-card">
-                    <img src="https://www.planetcarsz.com/img/carros/2025/12/porsche-911-carrera-t-formosa-2025-001-20251204185323-1600x901.jpg" alt="Porsche 911">
-                    <h3>Porsche 911</h3>
-                    <p>O desportivo mais icônico da história</p>
-                    <a href="porsche-911.html" class="btn-details">Ver Detalhes</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- Footer Integrado -->
     <div class="footer">
         <div class="footer-section">
             <p class="footer-title">Engenharia de Software - Desenvolvimento Web</p>
