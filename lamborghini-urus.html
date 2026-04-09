@@ -8,7 +8,7 @@
     <!-- Referência ao arquivo de estilos principal sem css inline em excesso -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body bgcolor="#0b0b0b">
+<body>
     <!-- Div do Menu Principal replicada -->
     <div class="menu">
         <!-- Navegação padrão Anchor Tag A -->
@@ -37,7 +37,7 @@
 
         <h2 align="center">Galeria Restrita e Mídia</h2>
         <!-- Tabela utilizada para simular a grid das thumbnails, técnica visual da Aula 3 -->
-        <table align="center" border="0" cellpadding="5">
+        <table class="gallery-table">
             <!-- Primeira e única linha da tabela -->
             <tr>
                 <td><img src="https://www.planetcarsz.com/assets/uploads/2017/12/LAMBORGHINI%20URUS%202019%2005.jpg" width="180" height="120" style="border: 1px solid white;"></td>
@@ -58,18 +58,18 @@
         <hr color="red" size="1" width="80%">
         <h3 align="center">Ficha Técnica Simplificada</h3>
         <!-- Tabela em conformidade com o que foi ensinado durante a Formatação -->
-        <table align="center" border="1" cellpadding="10" bgcolor="#0b0b0b" style="border-collapse: collapse; text-align: left; width: 60%; color: white;">
+        <table class="specs-table">
             <!-- TR de linha da tabela e TD preenchidos com as bordas ativadas -->
             <tr>
-                <td bgcolor="#1a1a1a" width="50%"><b>Velocidade Máxima</b></td>
+                <td  width="50%"><b>Velocidade Máxima</b></td>
                 <td>Mais de 300 km/h</td>
             </tr>
             <tr>
-                <td bgcolor="#1a1a1a"><b>Origem</b></td>
+                <td ><b>Origem</b></td>
                 <td>União Europeia e Continente</td>
             </tr>
             <tr>
-                <td bgcolor="#1a1a1a"><b>Status de Venda</b></td>
+                <td ><b>Status de Venda</b></td>
                 <td>Sob Encomenda Internacional</td>
             </tr>
         </table>

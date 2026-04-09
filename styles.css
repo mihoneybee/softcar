@@ -1,208 +1,234 @@
-/* 
-   Arquivo CSS Básico - SOFTCAR 
-   Projeto Acadêmico - Estilização Avançada (Sem Flex/Grid)
-*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
 
-body {
-    background: radial-gradient(circle at top, #1c1c1c, #0b0b0b);
-    color: #f4f4f4;
-    font-family: "Helvetica Neue", Arial, sans-serif;
+/* Reset e Base */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #e0e0e0;
+    background-color: #050505; /* Black UI Premium */
+    background-image: radial-gradient(circle at 50% 0%, #151515 0%, #050505 60%);
+    background-attachment: fixed;
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #e10600; /* Vermelho Ferrari */
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 15px;
-}
-
+/* Tipografia Focada em Luxo */
 h1 {
-    font-size: 32px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    display: inline-block;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-/* Base style for headings mapped directly */
+h2 {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #f1f1f1;
+    letter-spacing: 2px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-left: 4px solid #e10600; /* Ferrari Red Accent */
+    padding-left: 15px;
+}
 
+h3 {
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+p, li {
+    font-size: 1rem;
+    color: #bbbbbb;
+    font-weight: 300;
+}
+
+/* Menu de Navegação Premium */
 .menu {
-    background-color: rgba(26, 26, 26, 0.95);
-    border-bottom: 3px solid #e10600;
-    padding: 20px;
+    background-color: rgba(10, 10, 10, 0.95);
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    /* Box shadow para efeito "Glass" da O'Gara Coach */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 .menu a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin: 0 5px;
-    font-size: 14px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
+    margin: 0 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    padding: 10px 0;
+    border-bottom: 2px solid transparent;
 }
 
 .menu a:hover {
-    background-color: #e10600;
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(225, 6, 0, 0.5);
+    color: #e10600;
+    border-bottom: 2px solid #e10600;
 }
 
+/* Divisores Premium */
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(225, 6, 0, 0.5), transparent);
+    margin: 40px auto;
+    width: 60%;
+}
+
+/* Container Principal */
 .container {
     width: 85%;
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: rgba(25, 25, 25, 0.6);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-    border: 1px solid #333;
-    text-align: center;
+    max-width: 1300px;
+    margin: 50px auto;
+    background: rgba(15, 15, 15, 0.6);
+    padding: 50px;
+    border-radius: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Patrocinadores na Home */
-.sponsors {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #111;
-    border-radius: 10px;
-}
-
-.sponsors img {
-    margin: 10px 20px;
-    border: none;
-    filter: grayscale(100%) opacity(0.7);
-    transition: 0.4s ease;
-}
-
-.sponsors img:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.1);
-}
-
-/* Tabela básica para a Galeria, Catálogo e Tabela de dados */
+/* Estrutura de Tabelas Ocultas transformada em "Cards Flutuantes" */
 table {
     width: 100%;
+    margin: 30px auto;
     border-collapse: separate;
-    border-spacing: 15px;
-    margin: 25px auto; /* Alterado de 0 para auto para manter as tabelas com width < 100% centralizadas */
+    border-spacing: 20px;
 }
 
-th, td {
-    padding: 20px;
+/* Mesclagem de Estilo da Tabela Interna (Specs) */
+table.specs-table {
+    width: 70%;
+    margin: 40px auto;
+    background: #0d0d0d;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border: 1px solid #1f1f1f;
+}
+
+/* "Cards" (Células da Tabela TD) */
+td {
+    background-color: #111111;
+    border-radius: 12px;
+    padding: 30px 20px;
     text-align: center;
-    border: 1px solid #333;
-    background-color: #1a1a1a;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #1a1a1a;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    vertical-align: top;
 }
 
+/* Efeito Glow / Showcase de Luxo nos TD */
 td:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    border-color: #e10600;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(225, 6, 0, 0.15);
+    border-color: #3a0000;
 }
 
-th {
-    background-color: #e10600;
-    color: #fff;
-    border: none;
-    text-transform: uppercase;
-    font-size: 14px;
+td b {
+    color: #ffffff;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 15px;
     letter-spacing: 1px;
 }
 
-/* Links em geral (Saiba mais, ver detalhes) */
-a {
+td p {
+    margin-bottom: 10px;
+}
+
+/* Imagens em Alta Performance */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Cantos Sutis p/ Fotos de Carros */
+    transition: transform 0.5s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Zoom orgânico em Hover nas Imagens */
+td:hover img {
+    transform: scale(1.03);
+}
+
+/* Tratamento Imagem Principal nos veiculos */
+img[width="800"] {
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Links internos gerais em vermelho ou branco com fade */
+.container a {
     color: #e10600;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    transition: color 0.3s;
 }
-a:hover {
-    color: #ff4d4d;
+
+.container a:hover {
+    color: #ff3333;
     text-decoration: underline;
 }
 
-/* Rodapé Acadêmico */
+/* Efeitos Específicos do iFrame/Videos para bater com a PlanetCarsz */
+iframe {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+    margin-top: 20px;
+    transition: all 0.4s;
+    width: 100%;
+    max-width: 900px; /* Limitando responsivo em tableless mode */
+    aspect-ratio: 16 / 9; /* Garantindo proporção da TCar */
+    height: auto !important; /* Overriding legacy configs de html para videos */
+    min-height: 400px;
+}
+
+iframe:hover {
+    box-shadow: 0 20px 50px rgba(225,6,0,0.2);
+}
+
+/* Rodapé Acadêmico Consolidado e Elegante */
 .footer {
-    background-color: #111;
-    border-top: 3px solid #e10600;
     text-align: center;
-    padding: 30px;
+    background-color: #020202;
+    padding: 40px 20px;
+    color: #666666;
+    font-size: 0.85rem;
+    border-top: 1px solid #111;
     margin-top: 60px;
-    color: #777;
-    line-height: 1.8;
 }
 
 .footer strong {
-    color: #fff;
+    color: #999999;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .footer-names {
-    color: #bbb;
-    font-size: 14px;
+    margin-top: 15px;
+    line-height: 1.8;
 }
 
-/* Utilidades para a formatação textual */
-.red-text { color: #e10600; }
-.blue-text { color: #3498db; }
-.yellow-bg { background-color: #f1c40f; color: #000; }
-.bold { font-weight: bold; }
-.italic { font-style: italic; }
-
-/* Para a galeria de imagens 3xN */
-img {
-    border-radius: 8px;
-    max-width: 100%;
-}
-
-.galeria-tabela td {
-    padding: 0;
-    background-color: transparent;
-    border: none;
-}
-.galeria-tabela td:hover {
-    transform: scale(1.03);
-    box-shadow: none;
-    border: none;
-    z-index: 10;
-}
-.galeria-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border: 3px solid #222;
-    transition: 0.3s ease;
-    border-radius: 12px;
-}
-.galeria-img:hover {
-    border-color: #e10600;
-}
-
-/* Iframe do Video */
-iframe {
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-    border: 2px solid #e10600;
-}
-
-/* Divisores de Categoria */
-hr.stylized-hr {
-    border: 0;
-    height: 3px;
-    background-image: linear-gradient(to right, transparent, #e10600, transparent);
-    margin: 50px 0;
+/* Utilitário para Textos centralizados */
+.text-center {
+    text-align: center;
 }
