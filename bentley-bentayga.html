@@ -7,10 +7,34 @@
     <title>SOFTCAR | Bentley Bentayga</title>
     <!-- Referência ao arquivo de estilos principal sem css inline em excesso -->
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .footer {
+            text-align: center;
+            background-color: #020202;
+            padding: 20px;
+            color: #666666;
+            font-size: 0.85rem;
+            border-top: 1px solid #111;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            color: #999999;
+        }
+    </style>
 </head>
 <body>
-    <!-- Div do Menu Principal replicada -->
-    <iframe src="header.html" class="global-header" scrolling="no" frameborder="0"></iframe>
+    <!-- Menu Principal Integrado -->
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="briefing.html">Empresa</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="textos.html">Textos</a>
+        <a href="documentos.html">Documentos</a>
+        <a href="tabela.html">Tabelas</a>
+        <a href="listas.html">Listas</a>
+    </div>
 
     <!-- Div container centralizadora -->
     <div class="container">
@@ -66,10 +90,12 @@
         </table>
     </div>
 
-    <br><br>
-
-    <!-- Rodapé avaliativo contendo as exigências de nomenclatura dos Alunos -->
-    <iframe src="footer-simple.html" class="global-footer-simple" scrolling="no" frameborder="0"></iframe>
+    <!-- Rodapé Simples Integrado -->
+    <div class="footer">
+        <p>&copy; 2026 SoftCar. Todos os direitos reservados.</p>
+    </div>
 </body>
 </html>
+
+
 

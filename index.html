@@ -69,8 +69,8 @@
             display: block;
             width: 100%;
             padding: 12px;
-            background-color: #e10600;
-            color: #ffffff;
+            background-color: transparent;
+            color: #e10600;
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
@@ -78,11 +78,12 @@
             border-radius: 4px;
             transition: all 0.3s ease;
             border: 2px solid #e10600;
+            cursor: pointer;
         }
 
         .btn-details:hover {
-            background-color: transparent;
-            color: #e10600;
+            background-color: #e10600;
+            color: #ffffff;
         }
 
         @media (max-width: 1024px) {
@@ -102,11 +103,50 @@
             color: #999999;
             margin-top: 8px;
         }
+
+        /* Footer integrado */
+        .footer {
+            margin-top: 60px;
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #020202;
+            color: #666666;
+            font-size: 0.85rem;
+            border-top: 1px solid #111;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            color: #999999;
+        }
+
+        .footer .footer-section {
+            margin: 8px 0;
+        }
+
+        .footer .footer-title {
+            font-weight: 600;
+            color: #e10600;
+            margin-bottom: 5px;
+        }
+
+        .footer-names {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
-    <!-- Menu Principal via iframe -->
-    <iframe src="header.html" class="global-header" scrolling="no" frameborder="0"></iframe>
+    <!-- Menu Principal Integrado -->
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="briefing.html">Empresa</a>
+        <a href="galeria.html">Galeria</a>
+        <a href="textos.html">Textos</a>
+        <a href="documentos.html">Documentos</a>
+        <a href="tabela.html">Tabelas</a>
+        <a href="listas.html">Listas</a>
+    </div>
 
     <!-- Container Principal -->
     <div class="container">
@@ -156,7 +196,7 @@
             <div class="cars-grid">
                 <!-- Bugatti Chiron -->
                 <div class="car-card">
-                    <img src="https://www.planetcarsz.com/img/carros/2024/09/bugatti-chiron-pur-sport-gp-2024-001-20240902143003-1600x900.jpg" alt="Bugatti Chiron">
+                    <img src="https://www.planetcarsz.com/assets/uploads/2016/02/BUGATTI%20CHIRON%202017%200005.jpg" alt="Bugatti Chiron">
                     <h3>Bugatti Chiron</h3>
                     <p>Potência extrema com 1.500 cavalos</p>
                     <a href="bugatti-chiron.html" class="btn-details">Ver Detalhes</a>
@@ -310,9 +350,25 @@
 
     </div>
 
-    <br><br>
+    <!-- Footer Integrado -->
+    <div class="footer">
+        <div class="footer-section">
+            <p class="footer-title">Engenharia de Software - Desenvolvimento Web</p>
+        </div>
 
-    <!-- Rodapé Universal -->
-    <iframe src="footer.html" class="global-footer" scrolling="no" frameborder="0"></iframe>
+        <div class="footer-section">
+            <p><b>Integrantes do Projeto:</b></p>
+            <div class="footer-names">
+                <p>Mel Isis Costa Silva – 22508420</p>
+                <p>Gabriela Yasmin da Conceição Viana – 22505273</p>
+                <p>Guilherme Neves Lourenço – 22509395</p>
+                <p>Vitor dos Santos Wamburg – 22510570</p>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <p>&copy; 2026 SoftCar. Todos os direitos reservados.</p>
+        </div>
+    </div>
 </body>
 </html>

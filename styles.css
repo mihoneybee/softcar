@@ -232,34 +232,6 @@ iframe:hover {
 .text-center {
     text-align: center;
 }
-/* Iframe globais (Headers and Footers) */
-iframe.global-header {
-    width: 100%;
-    height: 90px;
-    display: block;
-    border: none;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    overflow: visible;
-}
-iframe.global-footer {
-    width: 100%;
-    height: 240px;
-    display: block;
-    border: none;
-    margin-top: 40px;
-    overflow: visible;
-}
-
-iframe.global-footer-simple {
-    width: 100%;
-    height: 80px;
-    display: block;
-    border: none;
-    margin-top: 40px;
-    overflow: visible;
-}
 
 /* Modificadores de BotÃµes Detalhes (Estilo TCar/Gatti) */
 a.btn-detalhes {
