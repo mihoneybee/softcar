@@ -1,28 +1,43 @@
 /* 
    Arquivo CSS Básico - SOFTCAR 
-   Projeto Acadêmico
+   Projeto Acadêmico - Estilização Avançada (Sem Flex/Grid)
 */
 
 body {
-    background-color: #0b0b0b;
+    background: radial-gradient(circle at top, #1c1c1c, #0b0b0b);
     color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #e10600; /* Vermelho Ferrari */
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
 }
 
-/* Base style for headings mapped directly without complex selectors */
+h1 {
+    font-size: 32px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Base style for headings mapped directly */
 
 .menu {
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.95);
     border-bottom: 3px solid #e10600;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .menu a {
@@ -31,71 +46,114 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     padding: 10px 20px;
     margin: 0 5px;
-    font-size: 16px;
+    font-size: 14px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
 }
 
 .menu a:hover {
     background-color: #e10600;
     color: #ffffff;
+    box-shadow: 0 0 10px rgba(225, 6, 0, 0.5);
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
+    width: 85%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(25, 25, 25, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    text-align: center;
 }
 
 /* Patrocinadores na Home */
 .sponsors {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #111;
+    border-radius: 10px;
 }
 
 .sponsors img {
-    margin: 10px;
-    border: 1px solid #333;
+    margin: 10px 20px;
+    border: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: 0.4s ease;
 }
 
-/* Tabela básica para a página de Galeria e Tabela de dados */
+.sponsors img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.1);
+}
+
+/* Tabela básica para a Galeria, Catálogo e Tabela de dados */
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
+    border-collapse: separate;
+    border-spacing: 15px;
+    margin: 25px 0;
 }
 
 th, td {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
-    border: 1px solid #444;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+td:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border-color: #e10600;
 }
 
 th {
-    background-color: #333;
-    color: #e10600;
+    background-color: #e10600;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-/* Links */
+/* Links em geral (Saiba mais, ver detalhes) */
 a {
     color: #e10600;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 a:hover {
-    color: #ff3333;
+    color: #ff4d4d;
+    text-decoration: underline;
 }
 
 /* Rodapé Acadêmico */
 .footer {
-    background-color: #1a1a1a;
+    background-color: #111;
     border-top: 3px solid #e10600;
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    color: #888;
-    line-height: 1.5;
+    padding: 30px;
+    margin-top: 60px;
+    color: #777;
+    line-height: 1.8;
+}
+
+.footer strong {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-names {
-    color: #ccc;
-    font-weight: bold;
+    color: #bbb;
+    font-size: 14px;
 }
 
 /* Utilidades para a formatação textual */
@@ -106,12 +164,37 @@ a:hover {
 .italic { font-style: italic; }
 
 /* Para a galeria de imagens 3xN */
+img {
+    border-radius: 8px;
+    max-width: 100%;
+}
+
 .galeria-tabela td {
-    padding: 5px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+}
+.galeria-tabela td:hover {
+    transform: scale(1.03);
+    box-shadow: none;
+    border: none;
+    z-index: 10;
 }
 .galeria-img {
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: 220px;
     object-fit: cover;
-    border: 2px solid #333;
+    border: 3px solid #222;
+    transition: 0.3s ease;
+    border-radius: 12px;
+}
+.galeria-img:hover {
+    border-color: #e10600;
+}
+
+/* Iframe do Video */
+iframe {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    border: 2px solid #e10600;
 }
