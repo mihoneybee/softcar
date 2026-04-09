@@ -154,11 +154,15 @@
          * .btn-details:hover - Ativação do inverted effect
          * Background: Muda de transparente para Ferrari Red (#e10600)
          * Color: Texto fica branco (#ffffff)
-         * Efeito visual: Botão "preenche" com cor vermelha
+         * Box-shadow: Glow vermelha ao redor do botão
+         * Transform: Scale aumenta o botão em 5% para destaque visual
+         * Efeito visual: Botão "preenche" com cor vermelha e aumenta de tamanho
          */
         .btn-details:hover {
             background-color: #e10600;             /* Fundo muda para Ferrari Red */
             color: #ffffff;                        /* Texto muda para branco */
+            box-shadow: 0 0 15px rgba(225, 6, 0, 0.6), inset 0 0 5px rgba(0, 0, 0, 0.2); /* Glow externo + sombra interna */
+            transform: scale(1.05);                /* Aumenta 5% para efeito de elevação */
         }
 
         /* ====================================================================
@@ -341,7 +345,7 @@
 
                 <!-- Bugatti La Voiture Noire -->
                 <div class="car-card">
-                    <img src="https://www.planetcarsz.com/img/carros/2024/05/bugatti-la-voiture-noire-2019-001-20240502120000-1600x900.jpg" alt="Bugatti La Voiture Noire">
+                    <img src="https://www.planetcarsz.com/assets/uploads/2019/03/BUGATTI%20LA%20VOITURE%20NOIRE%202019%20007.jpg" alt="Bugatti La Voiture Noire">
                     <h3>Bugatti La Voiture Noire</h3>
                     <p>A joia preta mais valiosa do mundo</p>
                     <a href="bugatti-la-voiture-noire.html" class="btn-details">Ver Detalhes</a>
@@ -349,7 +353,7 @@
 
                 <!-- Koenigsegg Jesko -->
                 <div class="car-card">
-                    <img src="https://www.planetcarsz.com/img/carros/2024/04/koenigsegg-jesko-speed-2024-002-20240415143000-1600x900.jpg" alt="Koenigsegg Jesko">
+                    <img src="https://www.planetcarsz.com/assets/uploads/2019/04/KOENIGSEGG%20JESKO%202020%20010.jpg" alt="Koenigsegg Jesko">
                     <h3>Koenigsegg Jesko</h3>
                     <p>Superior tecnológico sueco de absoluta performance</p>
                     <a href="koenigsegg-jesko.html" class="btn-details">Ver Detalhes</a>
@@ -373,7 +377,7 @@
 
                 <!-- Mercedes-Maybach -->
                 <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2020/11/MERCEDES%20BENZ%20MAYBACH%20S%20CLASS%202021%2004.jpg" alt="Mercedes-Maybach">
+                    <img src="https://www.planetcarsz.com/img/carros/2026/03/mercedes-maybach-s-class-2027-001-20260324144736-1280x925.jpg" alt="Mercedes-Maybach">
                     <h3>Mercedes-Maybach</h3>
                     <p>O auge do luxo e conforto alemão</p>
                     <a href="mercedes-maybach.html" class="btn-details">Ver Detalhes</a>
@@ -381,7 +385,7 @@
 
                 <!-- Rolls Royce Phantom -->
                 <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2019/06/ROLLS%20ROYCE%20PHANTOM%202018%2009.jpg" alt="Rolls Royce Phantom">
+                    <img src="https://www.planetcarsz.com/img/carros/2026/02/rolls-royce-phantom-arabesque-2026-001-20260213204633-1280x925.jpg" alt="Rolls Royce Phantom">
                     <h3>Rolls Royce Phantom</h3>
                     <p>A definição de luxo e prestígio britânico</p>
                     <a href="rolls-royce-phantom.html" class="btn-details">Ver Detalhes</a>

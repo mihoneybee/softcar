@@ -437,12 +437,16 @@ a.btn-detalhes {
  * Ativa o inverted effect: background muda para Ferrari Red
  * Border muda para vermelho mais claro
  * Cor do texto fica branca
+ * Box-shadow: Glow para destaque visual
+ * Transform: Scale aumenta o botão para efeito de elevação
  */
 a.btn-detalhes:hover {
     border-color: #e10600;                  /* Borda vermelha */
-    background-color: rgba(225, 6, 0, 0.05); /* Fundo vermelho muito sutil */
+    background-color: #e10600;              /* Fundo totalmente vermelho Ferrari */
     color: #fff !important;                 /* Texto branco */
     text-decoration: none !important;
+    box-shadow: 0 0 15px rgba(225, 6, 0, 0.6), inset 0 0 5px rgba(0, 0, 0, 0.2); /* Glow + sombra interna */
+    transform: scale(1.05);                 /* Aumenta 5% para destaque */
 }
 
 /* ====================================================================
