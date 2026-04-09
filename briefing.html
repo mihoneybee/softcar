@@ -1,60 +1,134 @@
-﻿<!DOCTYPE html>
+﻿<!--
+  ====================================================================
+  PÁGINA: BRIEFING DA EMPRESA
+  ====================================================================
+  Descrição: Página de apresentação informações da empresa SOFTCAR
+  Contém: Ramo de atuação, filiais, produtos, site, vantagens, referências
+  
+  Estrutura:
+    - Menu de navegação sticky
+    - Título e separador
+    - 6 seções de perguntas/respostas sobre a empresa
+    - Links externos para sites de referência
+    - Rodapé com informações acadêmicas
+  
+  Autor: Equipe SOFTCAR
+  Data: 2026
+  ====================================================================
+-->
+<!DOCTYPE html>
+<!-- HTML5 Document -->
 <html lang="pt-BR">
+<!-- Idioma português brasileiro -->
 <head>
+    <!-- Meta charset e viewport para responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
     <title>SOFTCAR | Briefing</title>
+    <!-- Referência ao CSS global -->
     <link rel="stylesheet" href="styles.css">
+    <!-- CSS local específico desta página (rodapé) -->
     <style>
+        /**
+         * .footer: Rodapé customizado para página de briefing
+         * Background preto escuro, texto em cinza
+         */
         .footer {
             text-align: center;
-            background-color: #020202;
+            background-color: #020202;         /* Preto escuro */
             padding: 20px;
             color: #666666;
             font-size: 0.85rem;
-            border-top: 1px solid #111;
+            border-top: 1px solid #111;        /* Borda sutil */
             margin-top: 60px;
         }
+        /**
+         * .footer p: Parágrafos dentro do rodapé
+         * Margem e cor específicos
+         */
         .footer p {
             margin: 5px 0;
-            color: #999999;
+            color: #999999;                    /* Cinza claro */
         }
     </style>
 </head>
 <body>
-    <!-- Menu Principal Integrado -->
+    <!--
+    ====================================================================
+    NAVEGAÇÃO PRINCIPAL (Menu Sticky Integrado)
+    ====================================================================
+    Menu que fica fixo no topo durante scroll
+    -->
     <div class="menu">
+        <!-- Home link -->
         <a href="index.html">Home</a>
+        <!-- Empresa (esta página) -->
         <a href="briefing.html">Empresa</a>
+        <!-- Galeria -->
         <a href="galeria.html">Galeria</a>
+        <!-- Textos -->
         <a href="textos.html">Textos</a>
+        <!-- Documentos -->
         <a href="documentos.html">Documentos</a>
+        <!-- Tabelas -->
         <a href="tabela.html">Tabelas</a>
+        <!-- Listas -->
         <a href="listas.html">Listas</a>
     </div>
 
+    <!--
+    ====================================================================
+    CONTAINER PRINCIPAL - Conteúdo de Briefing
+    ====================================================================
+    -->
     <div class="container">
+        <!-- Título principal -->
         <h1>Briefing da Empresa</h1>
+        <!-- Separador visual -->
         <hr>
         <br>
         
+        <!--
+        SEÇÃO 1: Ramo de atuação e tempo de mercado
+        <h3>: Subtítulo (menor que <h2>)
+        <p>: Parágrafo descritivo
+        -->
         <h3>1. Ramo de atuação da empresa e tempo de mercado:</h3>
         <p>A SOFTCAR atua no setor automotivo, voltada especificamente para a venda e importação de hipercarros e superesportivos de luxo. A empresa está se lançando no mercado de altíssimo padrão este ano.</p>
 
+        <!--
+        SEÇÃO 2: Número de filiais/franquias
+        -->
         <h3>2. Número de filiais/franquias:</h3>
-        <p>A empresa possui apenas 1 matriz física confidencial localizada em São Paulo e não opera através de franquias para manter a exclusividade.</p>
+        <p>A empresa possui apenas 1 matriz física confidencial localizada em Brasília e não opera através de franquias para manter a exclusividade.</p>
 
+        <!--
+        SEÇÃO 3: Produtos e/ou serviços oferecidos
+        -->
         <h3>3. Produtos e/ou serviços oferecidos:</h3>
         <p>Comercialização direta de marcas como Ferrari, Lamborghini, Bugatti e McLaren. Também oferecemos assessoria VIP para importação de veículos restritos, desembaraço aduaneiro e manutenção de coleção.</p>
 
+        <!--
+        SEÇÃO 4: Endereço do site atual
+        <a target="_blank">: Abre link em nova aba
+        -->
         <h3>4. Endereço do site atual:</h3>
         <p>Hospedagem gratuita fornecida pela Cloudflare Pages, disponível na URL de produção: <br>
         <a href="https://softcar.pages.dev/" target="_blank">https://softcar.pages.dev/</a></p>
 
+        <!--
+        SEÇÃO 5: Vantagens/desvantagens
+        <b>: Negrito (bold)
+        -->
         <h3>5. Vantagens/desvantagens sobre os concorrentes:</h3>
         <p><b>Vantagens:</b> Carteira de veículos exclusivíssimos, acesso a lotes restritos europeus e atendimento ultra personalizado.<br>
         <b>Desvantagens:</b> Tempo de espera em importações complexas sob encomenda pode ser longo.</p>
 
+        <!--
+        SEÇÃO 6: Referências de sites
+        Lista de links externos para sites de referência
+        -->
         <h3>6. Referências de sites (outras empresas):</h3>
         <p>Nossas principais fontes de inspiração e referências corporativas são vitrines exclusivas do segmento, incluindo:<br>
         - <a href="https://gattiveiculos.com.br/" target="_blank">Gatti Veículos</a><br>
@@ -62,53 +136,73 @@
         - <a href="https://www.planetcarsz.com/" target="_blank">PlanetCarsz</a><br>
         - <a href="https://tcar.com.br/" target="_blank">TCar Multimarcas</a></p>
 
+        <!-- SEÇÃO 7: Objetivos -->
         <h3>7. Objetivos a serem alcançados:</h3>
         <p>Tornar a SOFTCAR a principal referência digital e comercial na apresentação de superesportivos no país, completando a meta estrutural exigida na disciplina acadêmica.</p>
 
+        <!-- SEÇÃO 8: Público-alvo -->
         <h3>8. Público-alvo:</h3>
         <p>Colecionadores de veículos, empresários da classe AAA, atletas de ponta e entusiastas com altíssimo poder de investimento.</p>
 
+        <!-- SEÇÃO 9: Conteúdo do site -->
         <h3>9. Conteúdo do site:</h3>
         <p>Catálogo central unificado dos hipercarros, fichas técnicas individuais, galerias de mídia nativas e documentação interna corporativa (briefing, textos teóricos).</p>
 
+        <!-- SEÇÃO 10: Imagem transmitida -->
         <h3>10. Imagem a ser transmitida para os usuários:</h3>
         <p>A imagem transmitida deve ser de luxo, sofisticação e tradição. O layout escolhido é intencionalmente limpo e clássico (usando apenas marcações sólidas de aula), com cores focadas em Preto (#000 - elegância) e Vermelho brilhante (esportividade/agressividade).</p>
 
+        <!-- SEÇÃO 11: Documentação -->
         <h3>11. Documentação disponível (logotipo, folders, manuais etc):</h3>
         <p>Logotipos básicos tipográficos provisórios da SOFTCAR e compêndios extensos em formato HTML sobre as marcas comercializadas.</p>
 
+        <!-- SEÇÃO 12: Tecnologias -->
         <h3>12. Tecnologias ou linguagens desejadas:</h3>
         <p>O site foi planejado e moldado utilizando puramente HTML tradicional para estruturação e CSS estático simples, cumprindo a risca as restrições (ex: sem tags Flexbox, Node ou JS pesado).</p>
 
+        <!-- SEÇÃO 13: Marketing -->
         <h3>13. Ferramentas de marketing utilizadas atualmente:</h3>
         <p>Marketing reativo em circuitos fechados, networking entre investidores, presença em Leilões e agora este catálogo digital interativo.</p>
 
+        <!-- SEÇÃO 14: Objeções de estilo -->
         <h3>14. Objeções (não utilizar a cor x ou o estilo y etc,):</h3>
         <p>Proibido utilizar formatações espalhafatosas, cores neon (exceto vermelho institucional) ou JavaScript para criação de grid. O estilo não pode ser despojado nem popular; deve refletir seriedade e alto padrão. Sem fontes manuscritas, manter apenas tipografia legível (Helvetica, Sans-Serif).</p>
 
+        <!-- SEÇÃO 15: Verba -->
         <h3>15. Mínimo e máximo de verba disponível para o projeto:</h3>
         <p>Verba de desenvolvimento fictícia focada em escopo Web local, mas o valor de mercado real do projeto e da frota estaria na casa de múltiplos milhões de dólares. A nota almejada na disciplina é, no mínimo, a nota máxima.</p>
 
+        <!-- SEÇÃO 16: Prazo -->
         <h3>16. Prazo para desenvolvimento e/ou cronograma:</h3>
         <p>Prazo imediato, acompanhando a evolução dos laboratórios em sala de aula de Desenvolvimento Web. Entrega final para consolidação do fechamento avaliativo.</p>
 
+        <!-- SEÇÃO 17: Contato -->
         <h3>17. Contato (Nome/tel/email):</h3>
         <p>Equipe SOFTCAR – Mel Isis Costa Silva<br>
         Telefone fictício: (11) 90000-0000<br>
         Email: secretaria.softcar@luxo.com</p>
 
+        <!-- SEÇÃO 18: Observação final -->
         <h3>18. Observação:</h3>
         <p><b>Observação Acadêmica:</b> Todo o projeto foi reestruturado de um formato originalmente moderno para cumprir plenamente as diretrizes ensinadas em laboratório nas aulas iniciais sobre tabelas, tags literais, divisores, listas e elementos de formatação simples do HTML puro, contendo as devidas anotações no código-fonte em comentários como evidência e defesa técnica.</p>
 
     </div>
 
-    <!-- Rodapé Integrado -->
+    <!--
+    ====================================================================
+    RODAPÉ COMPLETO (Footer Integrado)
+    ====================================================================
+    Contém: Disciplina, integrantes com RAs, copyright
+    -->
     <div class="footer">
+        <!-- Seção 1: Disciplina -->
         <div class="footer-section">
             <p class="footer-title">Engenharia de Software - Desenvolvimento Web</p>
         </div>
+        <!-- Seção 2: Integrantes -->
         <div class="footer-section">
             <p><b>Integrantes do Projeto:</b></p>
+            <!-- Lista de integrantes com nomes e RAs -->
             <div class="footer-names">
                 <p>Mel Isis Costa Silva – 22508420</p>
                 <p>Gabriela Yasmin da Conceição Viana – 22505273</p>
@@ -116,6 +210,7 @@
                 <p>Vitor dos Santos Wamburg – 22510570</p>
             </div>
         </div>
+        <!-- Seção 3: Copyright -->
         <div class="footer-section">
             <p>&copy; 2026 SoftCar. Todos os direitos reservados.</p>
         </div>

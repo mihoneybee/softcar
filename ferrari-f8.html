@@ -1,97 +1,213 @@
-﻿<!DOCTYPE html>
+﻿<!--
+  ====================================================================
+  PÁGINA DE DETALHES: FERRARI F8 TRIBUTO
+  ====================================================================
+  Descrição: Página individual mostrando especificações completas
+  de um veículo específico (Ferrari F8 Tributo)
+  
+  Estrutura:
+    - Menu de navegação sticky (integrado)
+    - Título e imagem principal do carro
+    - Galeria de thumbnails em grid 3x3
+    - Vídeo do YouTube embedado
+    - Tabela de especificações técnicas
+    - Descrição textual do veículo
+    - Rodapé com informações acadêmicas
+  
+  Autor: Equipe SOFTCAR
+  Data: 2026
+  ====================================================================
+-->
+<!DOCTYPE html>
+<!-- HTML5: Padrão web moderno com semântica -->
 <html lang="pt-BR">
+<!-- lang="pt-BR": Idioma português brasileiro para acessibilidade -->
 <head>
+    <!-- Meta charset: Define encoding UTF-8 para caracteres especiais (ã, é, ç) -->
     <meta charset="UTF-8">
+    <!-- Meta viewport: Responsividade e escala para mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Tag TITLE exigida para o nome da aba -->
+    <!-- <title>: Aparece na aba do navegador e é usado por SEO -->
     <title>SOFTCAR | Ferrari F8 Tributo</title>
-    <!-- Referência ao arquivo de estilos principal sem css inline em excesso -->
+    <!-- <link rel="stylesheet">: Referência ao arquivo CSS global (styles.css) -->
     <link rel="stylesheet" href="styles.css">
+    <!-- <style>: CSS local específico desta página (rodapé customizado) -->
     <style>
+        /* Rodapé com estilo personalizado para páginas de detalhe */
         .footer {
             text-align: center;
-            background-color: #020202;
+            background-color: #020202;              /* Preto muito escuro */
             padding: 20px;
             color: #666666;
             font-size: 0.85rem;
-            border-top: 1px solid #111;
+            border-top: 1px solid #111;            /* Borda sutil */
             margin-top: 60px;
         }
 
+        /* Parágrafos dentro do rodapé */
         .footer p {
             margin: 5px 0;
-            color: #999999;
+            color: #999999;                        /* Cinza claro */
         }
     </style>
 </head>
 <body>
-    <!-- Menu Principal Integrado -->
+    <!--
+    ====================================================================
+    SEÇÃO 1: NAVEGAÇÃO PRINCIPAL (Menu Sticky)
+    ====================================================================
+    Menu integrado (não iframe) que fica fixo no topo durante scroll
+    -->
     <div class="menu">
+        <!-- Link para home -->
         <a href="index.html">Home</a>
+        <!-- Link para página de empresa -->
         <a href="briefing.html">Empresa</a>
+        <!-- Link para galeria de imagens -->
         <a href="galeria.html">Galeria</a>
+        <!-- Link para conteúdo textual -->
         <a href="textos.html">Textos</a>
+        <!-- Link para documentação -->
         <a href="documentos.html">Documentos</a>
+        <!-- Link para tabelas -->
         <a href="tabela.html">Tabelas</a>
+        <!-- Link para listas -->
         <a href="listas.html">Listas</a>
     </div>
 
-    <!-- Div container centralizadora -->
+    <!--
+    ====================================================================
+    SEÇÃO 2: CONTAINER PRINCIPAL - Detalhes do Veículo
+    ====================================================================
+    <div class="container">: Wrapper com espaçamento e background
+    -->
     <div class="container">
-        <!-- Título H1 utilizado para a identificação do nome do automóvel -->
+        <!-- <h1>: Título principal - Nome do veículo em MAIÚSCULAS -->
         <h1>Ferrari F8 Tributo</h1>
         
-        <!-- Bloco para centralizar a imagem principal com ajuste via atributo do HTML raiz -->
+        <!--
+        <div align="center">: Centraliza conteúdo internamente
+        Nota: align="center" é atributo HTML5 deprecado mas funcional
+        Preferência moderna seria usar CSS (text-align: center)
+        -->
         <div align="center">
-            <img src="https://www.planetcarsz.com/assets/uploads/2020/08/FERRARI%20F8%20TRIBUTO%202020%200054.jpg" width="600" height="auto" alt="Ferrari F8 Tributo" style="border: 2px solid red;">
+            <!--
+            <img>: Imagem principal do carro
+            Atributos:
+              - src: URL da imagem
+              - width: 600px (largura fixa)
+              - height: auto (altura proporcionada automaticamente)
+              - alt: Texto alternativo para acessibilidade (leitores de tela)
+              - style: CSS inline para borda vermelha de destaque
+            -->
+            <img src="https://www.planetcarsz.com/assets/uploads/2019/03/FERRARI%20F8%20TRIBUTO%202020%20002.jpg" width="600" height="auto" alt="Ferrari F8 Tributo" style="border: 2px solid red;">
         </div>
 
-        <!-- Separadores manuais -->
+        <!-- Espaçamento vertical -->
         <br>
+        <!-- <hr>: linha horizontal com cor vermelha (decoração) -->
         <hr color="red" size="1" width="80%">
 
+        <!--
+        ====================================================================
+        SEÇÃO 3: GALERIA DE IMAGENS (Grid 3x3)
+        ====================================================================
+        Tabela HTML usada como estrutura de grid (técnica da Web 1.0 ainda funcional)
+        Mostra thumbnails de 180x120px em 3 colun as
+        -->
         <h2 align="center">Galeria Restrita e Mídia</h2>
-        <!-- Tabela utilizada para simular a grid das thumbnails, técnica visual da Aula 3 -->
+        <!-- 
+        <table class="gallery-table">: Tabela para layout de grid de imagens
+        CSS transforms esta tabela em cards com efeitos hover (veja styles.css)
+        -->
         <table class="gallery-table">
-            <!-- Primeira e única linha da tabela -->
+            <!-- Primeira linha com 3 imagens -->
             <tr>
-                <td><img src="https://www.planetcarsz.com/assets/uploads/2020/08/FERRARI%20F8%20TRIBUTO%202020%200054.jpg" width="180" height="120" style="border: 1px solid white;"></td>
-                <td><img src="https://www.planetcarsz.com/assets/uploads/2020/08/FERRARI%20F8%20TRIBUTO%202020%200054.jpg" width="180" height="120" style="border: 1px solid white;"></td>
+                <!-- <td>: Célula da tabela, cada uma um "card" de imagem -->
+                <td><img src="https://www.planetcarsz.com/assets/uploads/2020/08/FERRARI%20F8%20TRIBUTO%202020%200027.jpg" width="180" height="120" style="border: 1px solid white;"></td>
+                <td><img src="https://www.planetcarsz.com/assets/uploads/2020/08/FERRARI%20F8%20TRIBUTO%202020%200052.jpg" width="180" height="120" style="border: 1px solid white;"></td>
                 <td><img src="https://www.planetcarsz.com/assets/uploads/2020/08/FERRARI%20F8%20TRIBUTO%202020%200054.jpg" width="180" height="120" style="border: 1px solid white;"></td>
             </tr>
         </table>
         
         <br>
         
-        <!-- Iframe do Youtube importado via HTML em código-fonte -->
+        <!--
+        ====================================================================
+        SEÇÃO 4: VÍDEO YOUTUBE EMBEDADO
+        ====================================================================
+        iframe: Elemento que embeda conteúdo externo (vídeo YouTube aqui)
+        -->
         <h3 align="center">Conheça através do Youtube:</h3>
         <p align="center">
+            <!--
+            <iframe>: Elemento que incorpora conteúdo externo
+            Atributos:
+              - width="560", height="315": Dimensões em pixels
+              - src="url": URL do vídeo YouTube embed
+              - title: Acessibilidade - descreve o conteúdo
+              - frameborder="0": Remove borda do iframe
+              - allow: Permissões para acelerômetro, autoplay, etc
+              - allowfullscreen: Permite modo tela cheia
+            O CSS em styles.css transforma isso em aspect-ratio 16:9 responsivo
+            -->
             <iframe width="560" height="315" src="https://www.youtube.com/embed/QIlOZFmHfVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
-        <!-- Ficha Técnica utilizando estrutura simples de marcação e tabela -->
+        <!--
+        ====================================================================
+        SEÇÃO 5: FICHA TÉCNICA (Especificações)
+        ====================================================================
+        Tabela com class="specs-table" para estilo customizado
+        Estrutura: Propriedade (esquerda, 50% largura) | Valor (direita)
+        CSS em styles.css estiliza TD como cards com efeitos hover
+        -->
         <hr color="red" size="1" width="80%">
         <h3 align="center">Ficha Técnica Simplificada</h3>
-        <!-- Tabela em conformidade com o que foi ensinado durante a Formatação -->
+        <!-- 
+        <table class="specs-table">: Tabela de especificações
+        Usa <td> que CSS transforma em cards
+        -->
         <table class="specs-table">
-            <!-- TR de linha da tabela e TD preenchidos com as bordas ativadas -->
+            <!-- Linha 1: Velocidade Máxima -->
             <tr>
-                <td  width="50%"><b>Velocidade Máxima</b></td>
+                <!-- width="50%": Ocupa metade da largura -->
+                <td width="50%"><b>Velocidade Máxima</b></td>
+                <!-- Célula de valor -->
                 <td>Mais de 300 km/h</td>
             </tr>
+            <!-- Linha 2: Origem -->
             <tr>
-                <td ><b>Origem</b></td>
+                <td><b>Origem</b></td>
+                <!-- Valor: País de origem do fabricante -->
                 <td>União Europeia e Continente</td>
             </tr>
+            <!-- Linha 3: Status de Venda -->
             <tr>
-                <td ><b>Status de Venda</b></td>
+                <td><b>Status de Venda</b></td>
+                <!-- Valor: Disponibilidade do modelo -->
                 <td>Sob Encomenda Internacional</td>
             </tr>
         </table>
+
+        <!--
+        ====================================================================
+        SEÇÃO 6: DESCRIÇÃO TEXTUAL DO VEÍCULO
+        ====================================================================
+        Parágrafo com informações narrativas descrevendo o carro
+        (Esta seção pode estar comentada ou vazia neste modelo)
+        -->
     </div>
 
-    <!-- Rodapé Simples Integrado -->
+    <!--
+    ====================================================================
+    SEÇÃO 7: RODAPÉ (Footer Integrado)
+    ====================================================================
+    Container HTML puro (não iframe) com copyright e informações acadêmicas
+    Background preto escuro (#020202) diferencia do container principal
+    -->
     <div class="footer">
+        <!-- Parágrafo com símbolo de copyright (&copy;) -->
         <p>&copy; 2026 SoftCar. Todos os direitos reservados.</p>
     </div>
 </body>

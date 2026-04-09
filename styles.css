@@ -1,32 +1,75 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+﻿/**
+ * ====================================================================
+ * PROJETO SOFTCAR - FOLHA DE ESTILOS PRINCIPAL
+ * ====================================================================
+ * Descrição: Arquivo CSS centralizado com toda a estilização do site
+ * Cores Principais: Ferrari Red (#e10600), Black Premium (#050505)
+ * Tipografia: Montserrat (Google Fonts)
+ * 
+ * Autor: Equipe SOFTCAR
+ * Data: 2026
+ * ====================================================================
+ */
 
-/* Reset e Base */
+/* ====================================================================
+   IMPORTAÇÕES E CONFIGURAÇÕES GLOBAIS
+   ==================================================================== */
+
+/* Importa fonte Montserrat do Google Fonts em 4 pesos: 300, 400, 600, 700 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+/* ====================================================================
+   RESET E ESTILOS BASE
+   ==================================================================== */
+
+/**
+ * Reset Universal: Remove margens, padding padrão e define box-sizing
+ * para facilitar controle de dimensões dos elementos
+ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/**
+ * Estilos do <body> - Container principal da página
+ * Define fundo preto premium com gradiente radial
+ * Aplica fonte Montserrat a toda a página
+ */
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #e0e0e0;
-    background-color: #050505; /* Black UI Premium */
+    color: #e0e0e0;                          /* Texto cinza claro */
+    background-color: #050505;               /* Fundo preto premium */
     background-image: radial-gradient(circle at 50% 0%, #151515 0%, #050505 60%);
-    background-attachment: fixed;
-    line-height: 1.6;
+    background-attachment: fixed;           /* Fundo fixo durante scroll */
+    line-height: 1.6;                        /* Espaçamento entre linhas */
 }
 
-/* Tipografia Focada em Luxo */
+/* ====================================================================
+   TIPOGRAFIA (H1, H2, H3, P, LI)
+   ==================================================================== */
+
+/**
+ * <h1> - Títulos Principais
+ * Estilo luxo com letra-spacing aumentado (4px)
+ * Usado em: Títulos de páginas, cabeçalhos de seções
+ */
 h1 {
     font-weight: 700;
     font-size: 2.5rem;
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+    text-transform: uppercase;              /* Converte texto para MAIÚSCULAS */
+    letter-spacing: 4px;                    /* Espaço entre letras */
     margin-bottom: 20px;
     text-align: center;
 }
 
+/**
+ * <h2> - Subtítulos de Seção
+ * Com barra vermelha Ferrari à esquerda (4px solid #e10600)
+ * Usado em: Cabeçalhos de categorias, seções temáticas
+ */
 h2 {
     font-weight: 600;
     font-size: 1.6rem;
@@ -35,36 +78,57 @@ h2 {
     margin-top: 40px;
     margin-bottom: 20px;
     text-transform: uppercase;
-    border-left: 4px solid #e10600; /* Ferrari Red Accent */
+    border-left: 4px solid #e10600;         /* Ferrari Red Accent - marca visual */
     padding-left: 15px;
 }
 
+/**
+ * <h3> - Títulos de Categoria
+ * Usados em cards de veículos e outros subtítulos
+ */
 h3 {
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 10px;
 }
 
+/**
+ * <p> e <li> - Parágrafos e Listas
+ * Texto com peso leve (300) para melhor legibilidade em fundo escuro
+ */
 p, li {
     font-size: 1rem;
     color: #bbbbbb;
-    font-weight: 300;
+    font-weight: 300;                       /* Peso leve para elegância */
 }
 
-/* Menu de Navegação Premium */
+/* ====================================================================
+   NAVEGAÇÃO (.menu)
+   ==================================================================== */
+
+/**
+ * <div class="menu"> - Menu de Navegação Principal
+ * Sticky: fica fixo no topo durante o scroll
+ * Positioned: z-index 1000 para ficar acima de outro conteúdo
+ * Efeito Glass: Com backdrop-filter blur(10px)
+ */
 .menu {
-    background-color: rgba(10, 10, 10, 0.95);
+    background-color: rgba(10, 10, 10, 0.95);  /* Transparência 95% */
     text-align: center;
     padding: 20px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    /* Box shadow para efeito "Glass" da O'Gara Coach */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    position: sticky;                           /* Fica fixo no topo */
+    top: 0;                                     /* Distância do topo = 0 */
+    z-index: 1000;                              /* Fica acima de outros elementos */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+    backdrop-filter: blur(10px);                /* Efeito Glass morphism */
 }
 
+/**
+ * <a> dentro de .menu - Links da Navegação
+ * Animação suave (transition: all 0.3s ease)
+ * Hover: cor vermelha com underline
+ */
 .menu a {
     color: #ffffff;
     text-decoration: none;
@@ -73,46 +137,79 @@ p, li {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;                 /* Suaviza mudanças */
     padding: 10px 0;
     border-bottom: 2px solid transparent;
 }
 
+/**
+ * .menu a:hover - Estados ao passar mouse
+ * Cor muda para Ferrari Red (#e10600)
+ * Barra indicadora aparece na base (underline animado)
+ */
 .menu a:hover {
     color: #e10600;
     border-bottom: 2px solid #e10600;
 }
 
-/* Divisores Premium */
+/* ====================================================================
+   DIVISORES (<hr>)
+   ==================================================================== */
+
+/**
+ * <hr> - Linhas divisoras decorativas
+ * Gradiente que desaparece nas bordas
+ * Usadas entre seções para separação visual
+ */
 hr {
-    border: 0;
+    border: 0;                                  /* Remove borda padrão */
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(225, 6, 0, 0.5), transparent);
     margin: 40px auto;
     width: 60%;
 }
 
-/* Container Principal */
+/* ====================================================================
+   CONTAINER E LAYOUT (.container)
+   ==================================================================== */
+
+/**
+ * <div class="container"> - Container Principal
+ * Limita largura máxima, centraliza e adiciona espaçamento
+ * Background semi-transparente com sombra interna (inset)
+ */
 .container {
     width: 85%;
-    max-width: 1300px;
-    margin: 50px auto;
-    background: rgba(15, 15, 15, 0.6);
-    padding: 50px;
+    max-width: 1300px;                      /* Limite máximo */
+    margin: 50px auto;                      /* Centraliza */
+    background: rgba(15, 15, 15, 0.6);     /* Fundo semi-transparente */
+    padding: 50px;                          /* Espaçamento interno */
     border-radius: 1px;
     border: 1px solid rgba(255, 255, 255, 0.03);
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra interna */
 }
 
-/* Estrutura de Tabelas Ocultas transformada em "Cards Flutuantes" */
+/* ====================================================================
+   TABELAS - ESTRUTURA DE CARDS
+   ==================================================================== */
+
+/**
+ * <table> - Tabelas genéricas
+ * Usadas como grid de cards (não para dados tabulares)
+ * Espaçamento separado (border-spacing: 20px)
+ */
 table {
     width: 100%;
     margin: 30px auto;
-    border-collapse: separate;
-    border-spacing: 20px;
+    border-collapse: separate;              /* Permite espaço entre células */
+    border-spacing: 20px;                   /* 20px de espaço entre TD */
 }
 
-/* Mesclagem de Estilo da Tabela Interna (Specs) */
+/**
+ * <table class="specs-table"> - Tabela de Especificações
+ * Usada em páginas de detalhes de veículos
+ * Fundo escuro com sombra e borda sutil
+ */
 table.specs-table {
     width: 70%;
     margin: 40px auto;
@@ -122,7 +219,11 @@ table.specs-table {
     border: 1px solid #1f1f1f;
 }
 
-/* "Cards" (Células da Tabela TD) */
+/**
+ * <td> - Células/Cards da Tabela
+ * Cada célula é um "card" com estilos próprios
+ * Transição suave ao passar o mouse (0.4s ease)
+ */
 td {
     background-color: #111111;
     border-radius: 12px;
@@ -133,13 +234,22 @@ td {
     vertical-align: top;
 }
 
-/* Efeito Glow / Showcase de Luxo nos TD */
+/**
+ * <td>:hover - Estado hover dos cards
+ * Transform: Move para cima (-8px) com efeito de elevação
+ * Box-shadow: Sombra vermelha (glow effect)
+ * Border: Cor vermelha escura
+ */
 td:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(225, 6, 0, 0.15);
-    border-color: #3a0000;
+    transform: translateY(-8px);             /* Move 8px para cima */
+    box-shadow: 0 15px 40px rgba(225, 6, 0, 0.15); /* Sombra vermelha */
+    border-color: #3a0000;                  /* Borda vermelha escura */
 }
 
+/**
+ * <b> dentro de <td> - Títulos dos cards
+ * Cor branca, maiúscula automática (text-transform)
+ */
 td b {
     color: #ffffff;
     font-size: 1.1rem;
@@ -148,26 +258,44 @@ td b {
     letter-spacing: 1px;
 }
 
+/**
+ * <p> dentro de <td> - Descrições dos cards
+ */
 td p {
     margin-bottom: 10px;
 }
 
-/* Imagens em Alta Performance */
+/* ====================================================================
+   IMAGENS
+   ==================================================================== */
+
+/**
+ * <img> - Estilos globais de imagens
+ * Border-radius: 8px para cantos suavizados
+ * Transição de transform para efeito zoom suave
+ */
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Cantos Sutis p/ Fotos de Carros */
+    border-radius: 8px;
     transition: transform 0.5s ease;
     display: block;
     margin: 0 auto;
 }
 
-/* Zoom orgânico em Hover nas Imagens */
+/**
+ * <td>:hover <img> - Zoom ao passar mouse no card
+ * Scale 1.03 = 3% de aumento na escala
+ */
 td:hover img {
     transform: scale(1.03);
 }
 
-/* Tratamento Imagem Principal nos veiculos */
+/**
+ * <img[width="800"]> - Imagens principais de veículos
+ * Sombra forte para destaque
+ * Borda sutil com transparência
+ */
 img[width="800"] {
     width: 100%;
     max-width: 900px;
@@ -175,7 +303,15 @@ img[width="800"] {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Links internos gerais em vermelho ou branco com fade */
+/* ====================================================================
+   LINKS
+   ==================================================================== */
+
+/**
+ * <a> dentro de .container - Links no conteúdo
+ * Cor Ferrari Red (#e10600)
+ * Hover: Cor mais clara (#ff3333) com underline
+ */
 .container a {
     color: #e10600;
     text-decoration: none;
@@ -188,7 +324,15 @@ img[width="800"] {
     text-decoration: underline;
 }
 
-/* Efeitos Específicos do iFrame/Videos para bater com a PlanetCarsz */
+/* ====================================================================
+   IFRAMES (Vídeos YouTube)
+   ==================================================================== */
+
+/**
+ * <iframe> - Vídeos embedados do YouTube
+ * Razão aspecto 16:9 (aspect-ratio: 16 / 9)
+ * Altura mínima 400px para compatibilidade
+ */
 iframe {
     border: none;
     border-radius: 12px;
@@ -196,99 +340,340 @@ iframe {
     margin-top: 20px;
     transition: all 0.4s;
     width: 100%;
-    max-width: 900px; /* Limitando responsivo em tableless mode */
-    aspect-ratio: 16 / 9; /* Garantindo proporção da TCar */
-    height: auto !important; /* Overriding legacy configs de html para videos */
-    min-height: 400px;
+    max-width: 900px;
+    aspect-ratio: 16 / 9;                   /* Mantém proporção 16:9 */
+    height: auto !important;                /* Altura automática */
+    min-height: 400px;                      /* Altura mínima */
 }
 
+/**
+ * <iframe>:hover - Efeito hover
+ * Sombra vermelha mais intensa
+ */
 iframe:hover {
     box-shadow: 0 20px 50px rgba(225,6,0,0.2);
 }
 
-/* Rodapé Acadêmico Consolidado e Elegante */
+/* ====================================================================
+   RODAPÉ (.footer)
+   ==================================================================== */
+
+/**
+ * <div class="footer"> - Rodapé da página
+ * Fundo preto muito escuro (#020202)
+ * Borda superior sutil para separação
+ */
 .footer {
     text-align: center;
-    background-color: #020202;
+    background-color: #020202;               /* Preto muito escuro */
     padding: 40px 20px;
     color: #666666;
     font-size: 0.85rem;
-    border-top: 1px solid #111;
+    border-top: 1px solid #111;              /* Separador de borda */
     margin-top: 60px;
 }
 
+/**
+ * <strong> dentro de .footer - Textos em negrito
+ * Uppercase com letter-spacing para luxo
+ */
 .footer strong {
     color: #999999;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
+/**
+ * <div class="footer-names"> - Lista de integrantes
+ * Line-height aumentado para melhor legibilidade
+ */
 .footer-names {
     margin-top: 15px;
     line-height: 1.8;
 }
 
-/* Utilitário para Textos centralizados */
+/* ====================================================================
+   UTILITÁRIOS
+   ==================================================================== */
+
+/**
+ * .text-center - Classe utilitária para centralizar texto
+ */
 .text-center {
     text-align: center;
 }
 
-/* Modificadores de BotÃµes Detalhes (Estilo TCar/Gatti) */
+/* ====================================================================
+   BOTÕES (.btn-detalhes)
+   ==================================================================== */
+
+/**
+ * <a class="btn-detalhes"> - Botão "Ver Detalhes"
+ * Estilo: Inverted Hover (Hover state muda o background)
+ * Padrão:
+ *   - Background: transparente
+ *   - Border: cinza escuro (1px)
+ *   - Hover: background Ferrari Red, borda vermelha
+ * Usado em: Cards de veículos no catálogo
+ */
 a.btn-detalhes {
-    display: block;
+    display: block;                          /* Bloco para ocupar largura total */
     width: 100%;
     margin-top: 20px;
-    padding: 12px 0;
+    padding: 12px 0;                        /* Espaçamento vertical */
     text-align: center;
-    border: 1px solid #444;
-    color: #e0e0e0 !important;
+    border: 1px solid #444;                 /* Borda cinza sutil */
+    color: #e0e0e0 !important;              /* Cor padrão: cinza claro */
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;              /* Transição suave */
 }
+
+/**
+ * a.btn-detalhes:hover - Estado ao passar mouse
+ * Ativa o inverted effect: background muda para Ferrari Red
+ * Border muda para vermelho mais claro
+ * Cor do texto fica branca
+ */
 a.btn-detalhes:hover {
-    border-color: #e10600;
-    background-color: rgba(225, 6, 0, 0.05);
-    color: #fff !important;
+    border-color: #e10600;                  /* Borda vermelha */
+    background-color: rgba(225, 6, 0, 0.05); /* Fundo vermelho muito sutil */
+    color: #fff !important;                 /* Texto branco */
     text-decoration: none !important;
 }
 
-/* Home Catalog Structure */
+/* ====================================================================
+   GRID DE CATÁLOGOS (Tabelas de layout)
+   ==================================================================== */
+
+/**
+ * <table class="catalog-table"> - Estrutura de grade para catálogo
+ * Usada na página inicial para exibir veículos em grid
+ * 3 colunas com border-spacing de 20px
+ */
 table.catalog-table {
     width: 100%;
-    border-spacing: 20px;
+    border-spacing: 20px;                  /* Espaço de 20px entre células */
     margin-bottom: 20px;
 }
 
+/**
+ * <td> dentro de table.catalog-table
+ * Alinhamento à esquerda, largura 33.333% (3 colunas iguais)
+ */
 table.catalog-table td {
     text-align: left;
-    width: 33.333%;
+    width: 33.333%;                        /* Uma terça do container */
 }
 
+/**
+ * <img> dentro de table.catalog-table
+ * Margem inferior para separação do conteúdo
+ */
 table.catalog-table img {
     margin-bottom: 15px;
     width: 100%;
 }
 
+/**
+ * <h3> dentro de table.catalog-table
+ * Títulos dos veículos com tamanho maior
+ */
 table.catalog-table h3 {
     margin-bottom: 5px;
-    font-size: 1.1rem;
+    font-size: 1.1rem;                    /* Tamanho aumentado */
 }
 
+/**
+ * <p> dentro de table.catalog-table
+ * Descrições com cor mais escura
+ */
 table.catalog-table p {
-    color: #666;
+    color: #666;                           /* Cinza escuro para contraste */
     font-size: 0.8rem;
 }
 
+/* ====================================================================
+   CATEGORIAS (Seções do Catálogo)
+   ==================================================================== */
+
+/**
+ * <h3 class="category-heading"> - Títulos de Categoria
+ * Divide as seções de veículos na página inicial
+ * Estilo: UPPERCASE, letter-spacing, borda inferior
+ */
 h3.category-heading {
-    text-transform: uppercase;
+    text-transform: uppercase;               /* Converte para MAIÚSCULAS */
     font-size: 1.5rem;
-    letter-spacing: 3px;
-    border-bottom: 1px solid #222;
+    letter-spacing: 3px;                    /* Espaço aumentado entre letras */
+    border-bottom: 1px solid #222;          /* Linha separadora */
     padding-bottom: 15px;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin-top: 50px;                       /* Espaço acima */
+    margin-bottom: 10px;                    /* Espaço abaixo */
 }
+
+/* ====================================================================
+   RESPONSIVIDADE - MEDIA QUERIES
+   ==================================================================== */
+
+/**
+ * BREAKPOINT 1: Tablets (1024px e abaixo)
+ * 
+ * Ajustes para dispositivos tablet em modo paisagem
+ * Reduz número de colunas e fontes para melhor visualização
+ */
+@media (max-width: 1024px) {
+    /* Reduce container width for better spacing on medium screens */
+    .container {
+        width: 90%;
+        padding: 40px;
+    }
+
+    /* Reduz fonte de headings para telas menores */
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Ajusta grid de catálogo: de 3 colunas para 2 colunas */
+    table.catalog-table td {
+        width: 50%;                          /* Muda para 50% - 2 colunas */
+    }
+
+    /* Reduz tamanho de imagens grandes */
+    img[width="800"] {
+        max-width: 600px;
+    }
+
+    /* Ajusta iframe para telas médias */
+    iframe {
+        max-width: 100%;
+        min-height: 300px;
+    }
+
+    /* Reduce padding in menu for tablet screens */
+    .menu a {
+        margin: 0 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/**
+ * BREAKPOINT 2: Smartphones (768px e abaixo)
+ * 
+ * Ajustes para dispositivos mobile
+ * Stack vertical (1 coluna), fontes muito reduzidas, padding reduzido
+ */
+@media (max-width: 768px) {
+    /* Container ocupando quase toda a largura */
+    .container {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    /* Reduz drasticamente headings em mobile */
+    h1 {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 0.95rem;
+        border-left: 3px solid #e10600;
+        padding-left: 10px;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    /* Menu: Reduz font-size e margin para economizar espaço */
+    .menu {
+        padding: 12px 0;
+    }
+
+    .menu a {
+        margin: 0 8px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    /* Tabelas: Muda para 1 coluna (stack vertical) */
+    table {
+        border-spacing: 10px;               /* Reduz espaçamento */
+    }
+
+    table.catalog-table td {
+        width: 100%;                        /* Stack vertical - 1 coluna */
+        margin-bottom: 20px;
+    }
+
+    /* Cards TD: Reduz padding em mobile */
+    td {
+        padding: 20px 15px;
+    }
+
+    td b {
+        font-size: 0.95rem;
+    }
+
+    /* Imagens: Usa 100% em mobile */
+    img[width="800"] {
+        max-width: 100%;
+    }
+
+    /* iFrame em mobile - altura menor */
+    iframe {
+        max-width: 100%;
+        min-height: 250px;
+        aspect-ratio: auto;                 /* Auto aspect ratio em mobile */
+    }
+
+    /* Botões: Ocupam largura total */
+    a.btn-detalhes {
+        padding: 10px 8px;
+        font-size: 0.7rem;
+    }
+
+    /* Categoria heading em mobile */
+    h3.category-heading {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        margin-top: 30px;
+    }
+
+    /* Footer reduzido */
+    .footer {
+        padding: 20px 10px;
+        font-size: 0.75rem;
+    }
+
+    /* HR (divisor) mais fino em mobile */
+    hr {
+        width: 80%;
+    }
+}
+
+/* ====================================================================
+   FIM DO ARQUIVO STYLES.CSS
+   
+   RESUMO DE DESIGN:
+   - Cores: Ferrari Red (#e10600), Black Premium (#050505)
+   - Tipografia: Montserrat em pesos 300, 400, 600, 700
+   - Grid Responsivo: 3 colunas → 2 → 1 conforme tela diminui
+   - Efeitos: Glass morphism, glow, zoom, smooth transitions
+   - Acessibilidade: Leo Legível, bom contraste, alturas mínimas
+   
+   ==================================================================== */

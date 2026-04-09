@@ -6,138 +6,262 @@
     <title>SOFTCAR | Catálogo de Veículos de Luxo</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* ====================================================================
+           ESTILOS LOCAIS - Específico desta página (index.html)
+           ==================================================================== */
+
+        /**
+         * .category-section - Container de cada categoria de veículos
+         * Agrupa título + grid de cars em uma seção visual
+         * Margem vertical de 60px para separação entre categorias
+         */
         .category-section {
             margin: 60px 0;
         }
 
+        /**
+         * .category-title - Títulos das categorias
+         * Exemplos: SUPERCARS, HIPERCARS, CARROS DE LUXO, SUVs DE LUXO, GRAND TOURERS
+         * Estilo: UPPERCASE, barra vermelha Ferrari embaixo, letter-spacing para luxo
+         * Font-size: 2rem = 32px (títulos grandes)
+         * Font-weight: 700 = Negrito (Bold)
+         */
         .category-title {
             font-size: 2rem;
             font-weight: 700;
             color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+            text-transform: uppercase;               /* Converte texto para MAIÚSCULAS */
+            letter-spacing: 3px;                    /* Espaço entre letras para elegância */
             margin-bottom: 40px;
             padding-bottom: 15px;
-            border-bottom: 3px solid #e10600;
+            border-bottom: 3px solid #e10600;       /* Barra vermelha Ferrari como indicador */
         }
 
+        /**
+         * .cars-grid - Container CSS Grid para layout em colunas
+         * Padrão Desktop: 3 colunas iguais
+         * Responsivo: 3 → 2 → 1 conforme tela diminui (veja media queries abaixo)
+         * gap: 30px = Espaço entre items (3 colunas = 2 gaps verticais + 1 gap horizontal)
+         */
         .cars-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            display: grid;                         /* Ativa CSS Grid layout */
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais (1fr = 1 parte do espaço) */
+            gap: 30px;                             /* 30px entre cada card */
             margin-bottom: 50px;
         }
 
+        /**
+         * .car-card - Card individual de um veículo
+         * O bloco visual que contém: imagem + título + descrição + botão
+         * Cada card ocupa 1 coluna no grid
+         * Background: Preto semi-transparente (rgba = Red Green Blue Alpha)
+         * Border: Vermelha muito sutil (30% opaca)
+         * Hover: Borda fica vermelha intensa, sombra vermelha, move para cima
+         */
         .car-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid rgba(225, 6, 0, 0.3);
-            padding: 20px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            text-align: center;
+            background: rgba(20, 20, 20, 0.8);     /* Preto com 80% opacidade */
+            border: 1px solid rgba(225, 6, 0, 0.3); /* Borda Ferrari Red 30% opaca */
+            padding: 20px;                          /* Espaço interno do card */
+            border-radius: 8px;                     /* Cantos arredondados 8px */
+            transition: all 0.3s ease;              /* Animação suave em todas as propriedades */
+            text-align: center;                     /* Centra todo o conteúdo */
         }
 
+        /**
+         * .car-card:hover - Estado do card ao passar o mouse
+         * Pseudo-classe :hover = quando cursor está sobre o elemento
+         * Ativa efeito de "elevação" e destaque com sombra vermelha
+         * Transform: translateY(-5px) = Move 5px para cima (sai da página)
+         */
         .car-card:hover {
-            border-color: #e10600;
-            box-shadow: 0 0 20px rgba(225, 6, 0, 0.4);
-            transform: translateY(-5px);
+            border-color: #e10600;                  /* Borda muda para Ferrari Red puro */
+            box-shadow: 0 0 20px rgba(225, 6, 0, 0.4); /* Sombra vermelha grande (glow) */
+            transform: translateY(-5px);            /* Move 5px para cima, criando efeito 3D */
         }
 
+        /**
+         * .car-card img - Imagem dentro do card
+         * Elemento <img> dentro do <div class="car-card">
+         * object-fit: cover = Recorta a imagem mantendo proporção e preenchendo espaço
+         * Height: 250px fixo = Todos os cards têm mesma altura de imagem (consistência)
+         * Border: Vermelha para combinar com tema
+         */
         .car-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border: 2px solid rgba(225, 6, 0, 0.5);
-            margin-bottom: 15px;
-            border-radius: 4px;
+            width: 100%;                           /* Ocupa 100% da largura do card */
+            height: 250px;                         /* Altura fixa para consistência */
+            object-fit: cover;                     /* Recorta mantendo proporções */
+            border: 2px solid rgba(225, 6, 0, 0.5); /* Borda Ferrari Red 50% opaca */
+            margin-bottom: 15px;                   /* Espaço abaixo, separando da descrição */
+            border-radius: 4px;                    /* Cantos levemente arredondados */
         }
 
+        /**
+         * .car-card h3 - Título do carro (nome do modelo)
+         * Exemplo: "Ferrari F8 Tributo", "McLaren 720S"
+         * Font-size: 1.3rem = 20.8px (grande mas não tanto quanto h1)
+         * Color: Branco puro (#ffffff)
+         */
         .car-card h3 {
             font-size: 1.3rem;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 10px;                   /* Espaço abaixo antes do próximo elemento */
         }
 
+        /**
+         * .car-card p - Descrição/tagline do carro
+         * Textos de 1-2 linhas descrevendo o veículo
+         * Exemplo: "Potência e elegância italiana em um único automóvel"
+         * min-height: 40px = Garante altura mínima mesmo com textos muito curtos
+         * Isso evita que cards com textos longas fiquem desalinhados
+         */
         .car-card p {
             font-size: 0.9rem;
-            color: #bbbbbb;
+            color: #bbbbbb;                        /* Cinza claro para contraste com fundo */
             margin-bottom: 15px;
-            min-height: 40px;
+            min-height: 40px;                      /* Altura mínima para alinhamento do botão */
         }
 
+        /**
+         * .btn-details - Botão "Ver Detalhes"
+         * Leva para página de detalhe específica do carro
+         * Estilo: INVERTED BUTTON (muda radicalmente no hover)
+         * Padrão:
+         *   - Background: Transparente (só vê a borda)
+         *   - Text: Vermelho Ferrari (#e10600)
+         *   - Border: 2px vermelho Ferrari
+         * Hover:
+         *   - Background: Muda para Ferrari Red
+         *   - Text: Muda para Branco (#ffffff)
+         * Pseudo-classe :hover = quando o cursor está sobre o botão
+         */
         .btn-details {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: transparent;
-            color: #e10600;
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            display: block;                        /* Elemento em bloco (não inline) */
+            width: 100%;                           /* Ocupa 100% da largura do card */
+            padding: 12px;                         /* Espaço interno do botão */
+            background-color: transparent;        /* Sem fundo inicialmente */
+            color: #e10600;                        /* Texto em vermelho Ferrari */
+            text-decoration: none;                 /* Remove underline de links */
+            font-weight: 700;                      /* Negrito para destaque */
+            text-transform: uppercase;             /* Converte para MAIÚSCULAS */
+            letter-spacing: 2px;                   /* Espaço entre letras */
             border-radius: 4px;
-            transition: all 0.3s ease;
-            border: 2px solid #e10600;
-            cursor: pointer;
+            transition: all 0.3s ease;             /* Suaviza mudanças no hover */
+            border: 2px solid #e10600;             /* Borda vermelha */
+            cursor: pointer;                       /* Cursor muda para "clicável" */
         }
 
+        /**
+         * .btn-details:hover - Ativação do inverted effect
+         * Background: Muda de transparente para Ferrari Red (#e10600)
+         * Color: Texto fica branco (#ffffff)
+         * Efeito visual: Botão "preenche" com cor vermelha
+         */
         .btn-details:hover {
-            background-color: #e10600;
-            color: #ffffff;
+            background-color: #e10600;             /* Fundo muda para Ferrari Red */
+            color: #ffffff;                        /* Texto muda para branco */
         }
 
+        /* ====================================================================
+           MEDIA QUERIES - Responsividade em diferentes tamanhos de tela
+           ==================================================================== */
+
+        /**
+         * Breakpoint 1024px: Tablets em paisagem e monitores pequenos
+         * Reduz de 3 colunas para 2 colunas para melhor visualização
+         */
         @media (max-width: 1024px) {
             .cars-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr); /* Muda de 3 para 2 colunas */
             }
         }
 
+        /**
+         * Breakpoint 768px: Smartphones e tablets em retrato
+         * Stack vertical: Reduz para 1 coluna (ocupando 100% de largura)
+         * Cards ocupam a largura inteira da tela
+         */
         @media (max-width: 768px) {
             .cars-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr;         /* 1 coluna - stack vertical */
             }
         }
 
+        /**
+         * .consult-text - Texto pequeno de consulta/call-to-action
+         * Usado para dados de contato ou mensagens secundárias
+         * Font-size: 0.85rem (85% do tamanho padrão)
+         * Margin-top: Espaço após subtítulo
+         */
         .consult-text {
             font-size: 0.85rem;
-            color: #999999;
+            color: #999999;                        /* Cinza escuro = informação secundária */
             margin-top: 8px;
         }
 
-        /* Footer integrado */
+        /**
+         * .footer - Rodapé da página
+         * Contém: Disciplina + Professores + Alunos + Copyright
+         * Integrado como HTML puro (não é iframe)
+         * Background: Preto muito escuro (#020202) = transição do branco para preto
+         * Border-top: Linha sutil de separação do conteúdo principal
+         */
         .footer {
             margin-top: 60px;
             padding: 40px 20px;
             text-align: center;
-            background-color: #020202;
+            background-color: #020202;             /* Preto muito escuro */
             color: #666666;
             font-size: 0.85rem;
-            border-top: 1px solid #111;
+            border-top: 1px solid #111;            /* Borda sutil de separação */
         }
 
+        /**
+         * .footer p - Parágrafos no rodapé
+         * Espaçamento e cor específicos para legibilidade
+         */
         .footer p {
             margin: 8px 0;
-            color: #999999;
+            color: #999999;                        /* Cinza claro para contraste com fundo escuro */
         }
 
+        /**
+         * .footer .footer-section - Seções dentro do rodapé
+         * Agrupa informações relacionadas (disciplina, professores, alunos)
+         */
         .footer .footer-section {
             margin: 8px 0;
         }
 
+        /**
+         * .footer .footer-title - Títulos das seções do rodapé
+         * Font-weight: 600 = Semi-negrito
+         * Color: #e10600 = Vermelho Ferrari para combinar com tema
+         */
         .footer .footer-title {
             font-weight: 600;
-            color: #e10600;
+            color: #e10600;                        /* Vermelho Ferrari */
             margin-bottom: 5px;
         }
 
+        /**
+         * .footer-names - Contêiner de nomes de integrantes
+         * Line-height: 1.6 = Espaço entre nomes para melhor legibilidade
+         */
         .footer-names {
             margin-top: 10px;
-            line-height: 1.6;
+            line-height: 1.6;                      /* Espaço entre linhas */
         }
     </style>
 </head>
 <body>
-    <!-- Menu Principal Integrado -->
+    <!--
+    ==========================================================
+    NAVEGAÇÃO PRINCIPAL (Menu Sticky)
+    ==========================================================
+    Menu integrado na página (não usa iframe)
+    Fica fixo no topo com semi-transparência e glass effect
+    Links: HOME | EMPRESA | GALERIA | TEXTOS | DOCUMENTOS | TABELAS | LISTAS
+    -->
     <div class="menu">
         <a href="index.html">Home</a>
         <a href="briefing.html">Empresa</a>
@@ -148,23 +272,36 @@
         <a href="listas.html">Listas</a>
     </div>
 
-    <!-- Container Principal -->
+    <!--
+    ==========================================================
+    CONTAINER PRINCIPAL - Catálogo de Veículos
+    ==========================================================
+    <div class="container">: Wrapper com máxima largura, centralizado
+    Contém 5 categorias de veículos com múltiplos car-cards em grid
+    -->
     <div class="container">
+        <!-- Título principal da página -->
         <h1>CATÁLOGO SOFTCAR</h1>
+        <!-- Subtítulo/descrição -->
         <p align="center" style="font-size: 1.1rem; color: #bbbbbb; margin-bottom: 10px;">
             A maior coleção de veículos de luxo e superdesportivos do Brasil
         </p>
+        <!-- Call-to-action para contato -->
         <p align="center" class="consult-text">Consulte nossos especialistas para mais informações</p>
 
         <br><hr><br>
 
-        <!-- CATEGORIA 1: SUPERCARS -->
+        <!--
+        CATEGORIA 1: SUPERCARS
+        Veículos esportivos de ultra performance
+        Cards: Ferrari F8 Tributo, Ferrari Monza SP2, McLaren 720S
+        -->
         <div class="category-section">
             <h2 class="category-title">Supercars</h2>
             <div class="cars-grid">
                 <!-- Ferrari F8 Tributo -->
                 <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2020/08/FERRARI%20F8%20TRIBUTO%202020%200054.jpg" alt="Ferrari F8 Tributo">
+                    <img src="https://www.planetcarsz.com/assets/uploads/2019/03/FERRARI%20F8%20TRIBUTO%202020%20002.jpg" alt="Ferrari F8 Tributo">
                     <h3>Ferrari F8 Tributo</h3>
                     <p>Potência e elegância italiana em um único automóvel</p>
                     <a href="ferrari-f8.html" class="btn-details">Ver Detalhes</a>
@@ -180,7 +317,7 @@
 
                 <!-- McLaren 720S -->
                 <div class="car-card">
-                    <img src="https://www.planetcarsz.com/assets/uploads/2017/02/MCLAREN%20720S%202018%2001.jpg" alt="McLaren 720S">
+                    <img src="https://www.planetcarsz.com/assets/uploads/2017/03/MCLAREN%20720S%202018%20001.jpg" alt="McLaren 720S">
                     <h3>McLaren 720S</h3>
                     <p>Engenharia britânica de topo mundial</p>
                     <a href="mclaren-720s.html" class="btn-details">Ver Detalhes</a>
