@@ -96,7 +96,7 @@ table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 15px;
-    margin: 25px 0;
+    margin: 25px auto; /* Alterado de 0 para auto para manter as tabelas com width < 100% centralizadas */
 }
 
 th, td {
