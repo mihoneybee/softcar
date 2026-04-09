@@ -6,6 +6,34 @@
     <title>SOFTCAR | Galeria de Veículos</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        .galeria-tabela {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .galeria-tabela td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #222;
+        }
+        
+        .galeria-img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .galeria-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(225, 6, 0, 0.4);
+        }
+        
         .footer {
             text-align: center;
             background-color: #020202;
@@ -35,7 +63,7 @@
 
     <div class="container">
         <h1>Nossa Galeria de Hipercarros</h1>
-        <p align="center">Abaixo apresentamos nosso catálogo de 25 veículos em alta definição.</p>
+        <p style="text-align: center; margin-bottom: 30px;">Abaixo apresentamos nosso catálogo de 25 veículos em alta definição.</p>
         
         <table class="galeria-tabela">
             <!-- Linha 1 -->
@@ -77,18 +105,18 @@
             <!-- Linha 7 -->
             <tr>
                 <td><img class="galeria-img" src="https://www.planetcarsz.com/assets/uploads/2020/06/FERRARI%20ROMA%202020%200003.jpg" alt="Carro 19"></td>
-                <td><img class="galeria-img" src="https://www.planetcarsz.com/img/carros/2024/09/bugatti-chiron-pur-sport-gp-2024-002-20240902143003-1600x900.jpg" alt="Carro 20"></td>
-                <td><img class="galeria-img" src="https://www.planetcarsz.com/img/carros/2024/05/bugatti-la-voiture-noire-2019-002-20240502120000-1600x900.jpg" alt="Carro 21"></td>
+                <td><img class="galeria-img" src="https://www.planetcarsz.com/img/carros/2026/03/ferrari-f812-competizione-green-jewel-2023-001-20260321194404-1600x900.jpg" alt="Carro 20"></td>
+                <td><img class="galeria-img" src="https://www.planetcarsz.com/assets/uploads/2018/12/CHEVROLET%20CAMARO%202019%2019.jpg" alt="Carro 21"></td>
             </tr>
             <!-- Linha 8 -->
             <tr>
-                <td><img class="galeria-img" src="https://www.planetcarsz.com/assets/uploads/2020/09/LAMBORGHINI%20HURACAN%20EVO%20RWD%202020%20003.jpg" alt="Carro 22"></td>
-                <td><img class="galeria-img" src="https://www.planetcarsz.com/assets/uploads/2019/09/LAMBORGHINI%20SIAN%202020%2004.jpg" alt="Carro 23"></td>
-                <td><img class="galeria-img" src="https://www.planetcarsz.com/assets/uploads/2017/12/LAMBORGHINI%20URUS%202019%2006.jpg" alt="Carro 24"></td>
+                <td><img class="galeria-img" src="https://www.planetcarsz.com/img/carros/galeria/2023/11/mitsubishi-lancer-evolution-viii-gsr-2003-07-20231104195104-1024x682.jpg" alt="Carro 22"></td>
+                <td><img class="galeria-img" src="https://www.planetcarsz.com/img/carros/galeria/2022/09/pagani-utopia-2023-02-20220915115436-1280x925.jpg" alt="Carro 23"></td>
+                <td><img class="galeria-img" src="https://www.planetcarsz.com/assets/uploads/2020/12/KOENIGSEGG%20AGERA%20RS%20REFINEMENT%202020%2001.jpg" alt="Carro 24"></td>
             </tr>
             <!-- Linha 9 -->
             <tr>
-                <td><img class="galeria-img" src="https://www.planetcarsz.com/assets/uploads/2017/02/MCLAREN%20720S%202018%2002.jpg" alt="Carro 25"></td>
+                <td><img class="galeria-img" src="https://www.planetcarsz.com/img/carros/2025/05/alfa-romeo-8c-doppiacoda-zagato-2025-001-20250526201536-1600x1000.jpg" alt="Carro 25"></td>
                 <td colspan="2"></td>
             </tr>
         </table>
