@@ -179,6 +179,50 @@ hr {
     width: 60%;
 }
 
+/* SEÇÃO DE PATROCINADORES */
+.sponsors-section {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.sponsors-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background: rgba(20, 20, 20, 0.5);
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 20px;
+}
+
+.sponsor-item img {
+    height: 60px; /* Altura fixa para manter o padrão visual */
+    width: auto;
+    filter: grayscale(100%) brightness(0.8); /* Efeito elegante em tons de cinza */
+    transition: all 0.4s ease;
+    opacity: 0.6;
+}
+
+.sponsor-item img:hover {
+    filter: grayscale(0%) brightness(1); /* Volta a cor original no hover */
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+    .sponsors-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sponsor-item img {
+        height: 45px;
+        margin: 0 auto;
+    }
+}
+
 /* RODAPÉ PRETO PROFUNDO */
 .footer {
     margin-top: 60px;
