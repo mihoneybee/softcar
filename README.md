@@ -1,3 +1,3 @@
 # SoftCar
 
-repositorio novo: https://github.com/mihoneybee/softcar
+repositorio: https://github.com/mihoneybee/softcar
