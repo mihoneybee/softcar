@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário 1</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+<body>
+    <div class="borda">
+        
+        <center>
+            <h2>Curso de Editoração de Página WEB</h2>
+        </center>
+
+        <form action="mailto:mel.silva@sempreceub.com" method="post" class="formulario">
+            <p>
+                Nome: <input type="text" name="nome" size="40"> 
+                E-mail: <input type="text" name="email" size="40">
+                <br><br>
+                Fone: <input type="text" name="fone" size="20">
+            </p>
+
+            <table border="1" cellspacing="0" cellpadding="10" style="width: 100%;">
+                <tr>
+                    <th width="50%">O que você está achando do andamento do curso até agora?</th>
+                    <th width="50%">Avalie o curso até agora:</th>
+                </tr>
+                <tr>
+                    <td valign="top">
+                        <input type="checkbox" name="opiniao" id="op1"> <label for="op1">Muito bom, sem comentários</label><br>
+                        <input type="checkbox" name="opiniao" id="op2"> <label for="op2">Bom, sem comentários</label><br>
+                        <input type="checkbox" name="opiniao" id="op3"> <label for="op3">Muito</label><br>
+                        <input type="checkbox" name="opiniao" id="op4"> <label for="op4">Poderia ir mais rápido</label><br>
+                        <input type="checkbox" name="opiniao" id="op5"> <label for="op5">Poderia ir mais devagar</label><br>
+                        <input type="checkbox" name="opiniao" id="op6"> <label for="op6">Outra opinião. Qual?</label>
+                        <input type="text" name="outra_opnião" size="10">
+                    </td>
+                    <td valign="top">
+                        <input type="radio" name="nota" id="n10p"> <label for="n10p">10++</label><br>
+                        <input type="radio" name="nota" id="n10"> <label for="n10">10</label><br>
+                        <input type="radio" name="nota" id="n9"> <label for="n9">9++</label><br>
+                        <input type="radio" name="nota" id="n8"> <label for="n8">8++</label><br>
+                        <input type="radio" name="nota" id="n7"> <label for="n7">7++</label><br>
+                        <input type="radio" name="nota" id="noutra"> <label for="noutra">Outra. Qual?</label> 
+                        <input type="text" name="outra_nota" size="10">
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+                <span>Deixe aqui seus comentários<br> e críticas construtivas</span>
+                <textarea name="comentarios" rows="4" style="flex-grow: 1;"></textarea>
+            </div>
+
+            <br>
+
+            <input type="reset" value="Limpar Campos">
+            <input type="submit" value="Enviar Dados">
+        </form>
+    </div>
+
+    <br><br>
+    
+    <footer>
+        <hr>
+        <center>
+            <b>Mel Isis Costa Silva - 22508420</b>
+        </center>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário 2</title>
+    <link rel="stylesheet" href="style02.css">
+</head>
+<body>
+
+    <form action="mailto:mel.silva@sempreceub.com" method="post">
+        
+        <fieldset>
+            <legend>Identificação do Usuário</legend>
+            <div class="row">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome completo" size="30">
+            </div>
+            <div class="row">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite a senha">
+            </div>
+            <div class="row">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" size="30">
+            </div>
+            
+            <fieldset style="width: fit-content;">
+                <legend>Sexo</legend>
+                <input type="radio" name="sexo" id="masc" value="M" checked> <label for="masc">Masculino</label><br>
+                <input type="radio" name="sexo" id="fem" value="F"> <label for="fem">Feminino</label>
+            </fieldset>
+
+            <div class="row">
+                <label for="nasc">Data de Nascimento:</label>
+                <input type="date" id="nasc" name="data_nasc">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço</legend>
+            <div class="row">
+                <label for="logra">Logradouro:</label>
+                <input type="text" id="logra" name="logradouro" placeholder="Rua, Av, Bairro" size="40">
+            </div>
+            <div class="row">
+                <label for="num">Número:</label>
+                <input type="number" id="num" name="numero" style="width: 50px;">
+            </div>
+            <div class="row">
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="MG">Minas Gerais</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade" placeholder="Sua cidade">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Mensagem do Usuário</legend>
+            <div class="row">
+                <label>Grau de urgência: Mín</label>
+                <input type="range" name="urgencia" min="0" max="10">
+                <label>Max</label>
+            </div>
+            <div class="row" style="display: flex; align-items: flex-start;">
+                <label for="msg">Mensagem:</label>
+                <textarea id="msg" name="mensagem" rows="4" cols="50"></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Quero um produto:</b></legend>
+            <div class="row">
+                <input type="checkbox" id="aviso" name="aviso">
+                <label for="aviso">Gostaria de adquirir um produto quando disponível.</label>
+            </div>
+            <div class="row">
+                <label for="cor">Cor:</label>
+                <input type="color" id="cor" name="cor_escolhida" value="#0000ff">
+            </div>
+            <div class="row">
+                <label for="qtd">Quantidade:</label>
+                <input type="number" id="qtd" name="quantidade" style="width: 60px;">
+            </div>
+            <div class="row">
+                <label for="preco">Preço Total R$:</label>
+                <input type="text" id="preco" name="preco_total" readonly size="10">
+            </div>
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+
+    <br><br>
+    <footer>
+        <hr>
+        <center>Mel Isis Costa Silva - 22508420</center>
+    </footer>
+
+</body>
+</html>
