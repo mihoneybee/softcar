@@ -198,3 +198,11 @@ iframe {
     box-shadow: 0 10px 30px rgba(0,0,0,0.8);
     border: 2px solid #e10600;
 }
+
+/* Divisores de Categoria */
+hr.stylized-hr {
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, transparent, #e10600, transparent);
+    margin: 50px 0;
+}
